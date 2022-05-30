@@ -1,0 +1,28 @@
+[
+    {
+        "ID": 1,
+        "name": "Produkt 1",
+        "description": "Ein tolles Produkt",
+        "price": "12,50€"
+    },
+    {
+        "ID": 2,
+        "name": "Produkt 2",
+        "description": "Ein zweites tolles Produkt",
+        "price": "10,00€"
+    },
+    {
+        "ID": 3,
+        "name": "Produkt 3",
+        "description": "Ein letzes tolles Produkt",
+        "price": "22,99€",
+        "neuesdaten": 23
+    },
+    {
+        "ID": 4,
+        "name": "Produkt 4",
+        "description": "Ein neues neues tolles Produkt",
+        "price": "22,99€"
+    }
+
+]
