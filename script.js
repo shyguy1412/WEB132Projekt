@@ -120,3 +120,14 @@ document.addEventListener('DOMContentLoaded', e => {
         updateShoppingCartElement(products);
     });
 });
+
+const navbar = document.querySelector('nav');
+const hamburger = navbar.querySelector('.hamburger');
+console.log(hamburger);
+hamburger.addEventListener('click', () => {
+    if(navbar.classList.contains('navbar-active')){
+        navbar.classList.remove('navbar-active');
+    } else {
+        navbar.classList.add('navbar-active');
+    }
+});

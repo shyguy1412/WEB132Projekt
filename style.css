@@ -1,12 +1,14 @@
-:root{
-    --background-color: #fff;
-    --foreground-color: #000;
-    --link-color: #6ea86e;
+:root {
+    --color-background: #fff;
+    --color-foreground: #000;
+    --color-link: #6ea86e;
 }
 
-body{
+body {
     background-color: var(--background-color);
     color: var(--foreground-color);
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -15,21 +17,25 @@ a {
 }
 
 nav {
+    --color-background: #fff;
+    --color-foreground: #343434;
+    --color-text: var(--color-background);
     position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
 }
 
-nav > ul {
-    display: none;
+nav .hamburger {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-nav > ul > li {
-    list-style: none;
-}
-
-nav > ul > li > a{
-}
-
-nav > .hamburger{
+nav .hamburger span {
     display: block;
     width: 33px;
     height: 4px;
@@ -37,5 +43,80 @@ nav > .hamburger{
     position: relative;
     border-radius: 3px;
     transition: 0.5s;
-    background: #000;
+    transform-origin: 0% 0%;
+    background: var(--color-foreground);
+    opacity: 1;
+}
+
+nav.navbar-active .hamburger span {
+    background: var(--color-background);
+}
+
+nav.navbar-active .hamburger span:first-child {
+    transform: translate(0px, -5px) rotate(45deg);
+}
+
+nav.navbar-active .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transform-origin: 50% 50%;
+}
+
+nav.navbar-active .hamburger span:last-child {
+    transform: translate(-2px, 0px) rotate(-45deg);
+}
+
+
+.menu {
+    background: var(--color-foreground);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 20rem;
+    max-width: 100vw;
+    margin: 0px;
+    height: 100vh;
+    translate: translate(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+ul {
+    margin-top: 3em;
+    padding-top: 3em;
+}
+
+ul * {
+    margin-bottom: 20px;
+    list-style: none;
+    text-align: left;
+}
+
+ul li * {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.navbar.navbar-active .menu {
+    transform: translate(-100%);
+}
+
+.darkmode-toggle {
+    cursor: pointer;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+    background: lightslategray;
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;    
 }
