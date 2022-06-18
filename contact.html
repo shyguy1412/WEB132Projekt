@@ -35,16 +35,21 @@
         <h2 id="contactme"> Contact Me </h2>
 
         <form>
-            <input type="radio" name="female" value="female">
+            <input type="radio" id="female" name="gender" value="female">
             <label for="female">Female</label><br>
-            <input type="radio" name="male" value="male">
+
+            <input type="radio" id="male" name="gender" value="male">
             <label for="male">Male</label><br>
-            <input type="radio" name="nonbinary" value="nonbinary">
+
+            <input type="radio" id="nonbinary" name="gender" value="nonbinary">
             <label for="nonbinary">Non binary</label><br><br>
+            
+            <input type="text" id="name" name="name" placeholder="Laura Moore"><br><br>
             <label for="name"> Name </label><br>
-            <input type="text" name="name" placeholder="Laura Moore"><br><br>
+
+            <input type="email" id="email" name="mail" placeholder="laura-moore@nonsense.com"><br><br>
             <label for="email">E-Mail</label><br>
-            <input type="email" name="mail" placeholder="laura-moore@nonsense.com"><br><br>
+
             <label>Message</label><br>
             <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea><br><br>
             <button type="submit">Submit</button>
