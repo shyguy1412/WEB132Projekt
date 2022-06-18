@@ -1,12 +1,12 @@
 :root {
-    --color-background: #fff;
-    --color-foreground: #000;
+    --color-background: #dcc9b6;
+    --color-foreground: #343434;
     --color-link: #6ea86e;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--foreground-color);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     margin: 0;
     padding: 0;
 }
@@ -17,8 +17,8 @@ a {
 }
 
 nav {
-    --color-background: #fff;
-    --color-foreground: #343434;
+    --color-background: #343434;
+    --color-foreground: #a39171;
     --color-text: var(--color-background);
     position: fixed;
     right: 0px;
@@ -44,7 +44,7 @@ nav .hamburger span {
     border-radius: 3px;
     transition: 0.5s;
     transform-origin: 0% 0%;
-    background: var(--color-foreground);
+    background: var(--color-background);
     opacity: 1;
 }
 
@@ -108,7 +108,7 @@ footer{
     display: flex;
     justify-content: center;
     gap: 10em;
-    background: lightslategray;
+    background: #abc4ab;
 }
 
 .socials{
