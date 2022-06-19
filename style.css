@@ -120,3 +120,21 @@ footer{
     display: flex;
     flex-direction: column;    
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    background: #a39171;
+    padding: 1em;
+    border-radius: 2em
+}
+
+.item{
+    background: #abc4ab;
+    padding: 1em;
+    border-radius: 2em;
+    font-size: 1em;
+}
