@@ -108,7 +108,7 @@ footer{
     display: flex;
     justify-content: center;
     gap: 10em;
-    background: #abc4ab;
+    background: #a39171;
 }
 
 .socials{
@@ -121,7 +121,7 @@ footer{
     flex-direction: column;    
 }
 
-/*.container{
+.container{
     display: flex;
     flex-direction: column;
 }
@@ -137,7 +137,7 @@ footer{
     padding: 1em;
     border-radius: 2em;
     font-size: 1em;
-}*/
+}
 
 body {
     display: grid;
@@ -147,4 +147,10 @@ body {
       'footer footer footer footer footer' ;
     grid-gap: 10px;
     padding: 10px;
-  }
+}
+
+header{
+    background: #a39171;
+    padding: 10px;
+}
+
