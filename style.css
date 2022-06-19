@@ -4,13 +4,6 @@
     --color-link: #6ea86e;
 }
 
-body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    margin: 0;
-    padding: 0;
-}
-
 a {
     color: var(--link-color);
     text-decoration: none;
@@ -121,12 +114,12 @@ footer{
     flex-direction: column;    
 }
 
-.container{
+.container1{
     display: flex;
     flex-direction: column;
 }
 
-.container{
+.container1{
     background: #a39171;
     padding: 1em;
     border-radius: 2em
@@ -140,6 +133,7 @@ footer{
 }
 
 body {
+    background-color: var(--color-background);
     display: grid;
     grid-template-areas:
       'header header header header header'
@@ -153,4 +147,5 @@ header{
     background: #a39171;
     padding: 10px;
 }
+
 
