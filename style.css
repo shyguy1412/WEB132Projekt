@@ -114,12 +114,15 @@ footer{
     flex-direction: column;    
 }
 
-.container1{
+.container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-.container1{
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background: #a39171;
     padding: 1em;
     border-radius: 2em
@@ -130,6 +133,7 @@ footer{
     padding: 1em;
     border-radius: 2em;
     font-size: 1em;
+    flex-grow: 1;
 }
 
 body {
