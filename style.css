@@ -104,19 +104,83 @@ ul li * {
     cursor: pointer;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     gap: 10em;
     background: lightslategray;
 }
 
-.socials{
+.socials {
     display: flex;
     flex-direction: column;
 }
 
-.footer-links{
+.footer-links {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+}
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box
+}
+body {
+
+    background-color: #ABC4AB;
+    display: flexbox;
+   }
+
+
+
+#merch {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+
+}
+
+.about {
+    margin: 2em;
+    padding: 0;
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    top: 70%;
+}
+
+.abt {
+
+
+    width: 660px;
+    height: 300px;
+    margin: 100px auto;
+    position: relative;
+    font-family: arial;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+.products{
+    width: auto;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.products .item{
+    width:220px;
+    height:auto;
+    margin: 10px;
+    background:#6ea86e;
+    padding: 30px 20 px 65 px ;
+    border: 1px solid;
+    position: relative
+
 }
