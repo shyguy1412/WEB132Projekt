@@ -17,6 +17,7 @@ nav {
     right: 0px;
     top: 0px;
     z-index: 1;
+    grid-area: header;
 }
 
 nav .hamburger {
@@ -71,6 +72,7 @@ nav.navbar-active .hamburger span:last-child {
     height: 100vh;
     translate: translate(100%);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    opacity: 0;
 }
 
 ul {
@@ -104,6 +106,15 @@ footer{
     background: #a39171;
 }
 
+.logo{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 2px 2px var(--color-background) ;
+    color: var(--color-link);
+    font-style: italic;
+}
+
 .socials{
     display: flex;
     flex-direction: column;
@@ -114,37 +125,45 @@ footer{
     flex-direction: column;    
 }
 
-.container{
-    display: flex;
+.checkout-grid{
+    /* display: flex;
     flex-direction: row;
-}
-
-.container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: #a39171;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-areas:
+      'cart'
+      'details' 
+      'payment' ;
+    grid-gap: 10px;
+    /* background: #a39171; */
     padding: 1em;
     border-radius: 2em
 }
 
-.item{
-    background: #abc4ab;
-    padding: 1em;
+#checkout-cart {
+    grid-area: cart;
+}
+
+#checkout-form-details {
+    grid-area: details;
+}
+
+#checkout-payment-options{
+    grid-area: payment;
+}
+
+.checkout-grid > *{
+    /* background: #abc4ab; */
+    /* padding: 1em; */
     border-radius: 2em;
     font-size: 1em;
     flex-grow: 1;
 }
 
+
 body {
+    margin: 0;
     background-color: var(--color-background);
-    display: grid;
-    grid-template-areas:
-      'header header header header header'
-      'main main main' 
-      'footer footer footer footer footer' ;
-    grid-gap: 10px;
-    padding: 10px;
 }
 
 header{
