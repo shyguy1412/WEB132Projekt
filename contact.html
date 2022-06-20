@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="icon" href="favicon(8)/favicon-96x96.ico" type="image/x-icon">
-        <script src="script.js" defer></script>
-        <title> Contact | GROGU </title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="favicon(8)/favicon-96x96.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <title> Contact | GROGU </title>
+</head>
 
-    <body>
-        <!-- <header>
+<body>
+    <!-- <header>
             <img src="logo.jpg" alt="Grogu written in capital letters italic">
        
 
@@ -38,38 +38,42 @@
             </nav>
         </header> -->
 
-        <div class="container1">
-            <div class="item">
-                <h2> Contact Me </h2>
-            
-                <main>
-                <form>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
 
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
+    <h2> Contact Me </h2>
 
-                    <input type="radio" id="nonbinary" name="gender" value="nonbinary">
-                    <label for="nonbinary">Non binary</label><br><br>
-            
-                    <input type="text" id="name" name="name" placeholder="Laura Moore"><br><br>
-                    <label for="name"> Name </label><br>
+    <form class="grogu-card" id="contact-form">
+        <!-- <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
 
-                    <input type="email" id="email" name="mail" placeholder="laura-moore@nonsense.com"><br><br>
-                    <label for="email">E-Mail</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
 
-                    <label>Message</label><br>
-                    <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea><br><br>
-                    <button type="submit">Submit</button>
-                
-                </form>
-                </main>
-            </div>
-            
-        </div>
+        <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+        <label for="nonbinary">Non binary</label><br> -->
 
-        <!-- <footer>
+        <label for="gender">Gender</label><br>
+        <select name="gender" id="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="non-binary">Non-binary</option>
+            <option value="no-answer" selected>Prefer not to answer</option>
+        </select><br>
+
+        <label for="name"> Name </label><br>
+        <input required type="text" id="name" name="name" placeholder="Laura Moore"><br>
+
+        <label for="email">E-Mail</label><br>
+        <input required type="email" id="email" name="mail" placeholder="laura-moore@nonsense.com"><br>
+
+        <label for="message">Message</label><br>
+        <textarea required name="message" cols="30" rows="10" placeholder="Your Message"></textarea><br>
+
+       <input type="submit">
+
+    </form>
+
+
+    <!-- <footer>
             <div class="socials">
                 <span class="youtube">Youtube</span>
                 <span class="twitter">Twitter</span>
@@ -81,7 +85,8 @@
                 <a href="#">Conditions</a>
             </div>
         </footer> -->
-    </body>
+</body>
+
 </html>
 
 <!-- So mache ich ein Kommentar in HTML -- >

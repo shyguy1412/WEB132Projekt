@@ -1,5 +1,5 @@
 :root {
-    --color-background: #dcc9b6;
+    --color-background: #ecdecd;
     --color-foreground: #343434;
     --color-primary: #abc4ab;
     --color-border: #a39171;
@@ -17,6 +17,15 @@ h2 {
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+input, textarea, select{
+    background: #eee;
+    border: 1px solid var(--color-border);
+}
+
+textarea{
+    max-width: 100%;
 }
 
 nav {
@@ -238,12 +247,10 @@ body {
     width: 220px;
     height: auto;
     margin: 10px;
-    background: var(--color-primary);
-    padding: 30px 20 px 65 px;
-    border: 2px solid var(--color-border);
     position: relative;
-    padding: .5em;
 }
+
+
 
 .products-list > .item > h3 {
     margin-bottom: 0.5em;
@@ -262,12 +269,11 @@ body {
     display: grid;
     grid-template-areas:
         'cart'
-        'details'
-        'payment';
+        'form';
     grid-gap: 10px;
     /* background: #a39171; */
     padding: 1em;
-    border-radius: 2em
+    margin: 1em;
 }
 
 #checkout-cart {
@@ -278,18 +284,48 @@ body {
     grid-area: details;
 }
 
+#checkout-form-details > input{
+    margin-bottom: 0.8em;
+} 
+
+#checkout-form {
+    display: grid;
+    grid-template-areas:
+    'details'
+    'payment';
+
+    grid-area: form;
+}
+
+#checkout-form input[type=submit]{
+    margin-top: 0.8em;
+    width: 150px;
+}
+
 #checkout-payment-options {
     grid-area: payment;
 }
 
 .checkout-grid>* {
-    /* background: #abc4ab; */
-    /* padding: 1em; */
-    border-radius: 2em;
     font-size: 1em;
-    flex-grow: 1;
 }
 
+.grogu-card{
+    background: var(--color-primary);
+    border: 2px solid var(--color-border);
+    position: relative;
+    padding: .5em;
+}
+
+#contact-form{
+    margin: 1em;
+}
+
+#contact-form > input,
+#contact-form > select,
+#contact-form > textarea{
+    margin-bottom: 0.8em;
+}
 
 body {
     margin: 0;

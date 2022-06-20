@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <span class="logo">GROGU</span>
 
         <div class="hamburger">
@@ -33,62 +33,72 @@
                 <a href="">Privacy Policy</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 
 
     <h2>Checkout</h2>
     <div class="checkout-grid">
 
-        <div id="checkout-cart">
+        <div class="grogu-card" id="checkout-cart">
             <h3>Your Cart</h3>
-            <!-- Insert Cart Here -->
+            <div id="$ID" class="cart-product">
+                <h3>$name</h3>
+                <span>$price</span>
+                <span>$count</span>
+            </div>
+            <div id="$ID" class="cart-product">
+                <h3>$name</h3>
+                <span>$price</span>
+                <span>$count</span>
+            </div>
         </div>
 
 
-        <form>
-            <h3>Delivery</h3>
+
+        <form action="#" id="checkout-form" class="grogu-card">
 
             <div id="checkout-form-details">
+                <h3>Delivery</h3>
 
-                <input type="radio" id="female" name="gender" value="Female">
+                <!-- <input type="radio" id="female" name="gender" value="Female">
                 <label for="female">Female</label><br>
 
                 <input type="radio" id="male" name="gender" value="Male">
                 <label for="male">Male</label><br>
 
                 <input type="radio" id="nonbinary" name="gender" value="Nonbinary">
-                <label for="nonbinary">Non binary</label><br><br>
+                <label for="nonbinary">Non binary</label><br><br> -->
 
                 <label for="firstname">First Name</label><br>
-                <input type="text" name="firstname" placeholder="Laura"><br><br>
+                <input required type="text" name="firstname" placeholder="Laura"><br>
 
                 <label for="lastname">Last Name</label><br>
-                <input type="text" name="lastname" placeholder="Moore"><br><br>
+                <input required type="text" name="lastname" placeholder="Moore"><br>
 
                 <label for="email">Email</label><br>
-                <input type="email" name="email" placeholder="laura.moore@nonsense.com"><br><br>
+                <input required type="email" name="email" placeholder="laura.moore@nonsense.com"><br>
 
                 <label for="adress">Adress</label><br>
-                <input type="text" name="adress" placeholder="Imagine Rode 42"><br><br>
+                <input required type="text" name="adress" placeholder="Imagine Rode 42"><br>
 
                 <label for="postcode">Postal Code</label><br>
-                <input type="text" name="postcode" placeholder="42378"><br><br>
+                <input required type="text" name="postcode" placeholder="42378"><br>
 
                 <label for="city">City</label><br>
-                <input type="text" name="city" placeholder="Cool City"><br><br>
+                <input required type="text" name="city" placeholder="Cool City"><br>
             </div>
 
 
             <div id="checkout-payment-options">
                 <h3>Payment</h3>
 
-                <input type="radio" name="payment" id="klarna">
+                <input required type="radio" name="payment" id="klarna">
                 <label for="klarna">Klarna</label>
 
-                <input type="radio" name="payment" id="creditcard">
+                <input required type="radio" name="payment" id="creditcard">
                 <label for="creditcard">Credit Card</label>
 
-                <input type="radio" name="payment" id="paypal">
+                <input required type="radio" name="payment" id="paypal">
                 <label for="paypal">PayPal</label>
             </div>
 
@@ -99,7 +109,7 @@
 
     </div>
 
-    <footer>
+    <!-- <footer>
         <div class="socials">
 
             <span class="youtube">Youtube</span>
@@ -111,7 +121,7 @@
             <a href="#">Contact</a>
             <a href="#">Conditions</a>
         </div>
-    </footer>
+    </footer> -->
 
 </body>
 
