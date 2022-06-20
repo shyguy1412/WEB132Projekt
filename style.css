@@ -1,14 +1,7 @@
 :root {
-    --color-background: #fff;
-    --color-foreground: #000;
+    --color-background: #dcc9b6;
+    --color-foreground: #343434;
     --color-link: #6ea86e;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    margin: 0;
-    padding: 0;
 }
 
 a {
@@ -17,13 +10,14 @@ a {
 }
 
 nav {
-    --color-background: #fff;
-    --color-foreground: #343434;
+    --color-background: #343434;
+    --color-foreground: #a39171;
     --color-text: var(--color-background);
     position: fixed;
     right: 0px;
     top: 0px;
     z-index: 1;
+    grid-area: header;
 }
 
 nav .hamburger {
@@ -44,7 +38,7 @@ nav .hamburger span {
     border-radius: 3px;
     transition: 0.5s;
     transform-origin: 0% 0%;
-    background: var(--color-foreground);
+    background: var(--color-background);
     opacity: 1;
 }
 
@@ -78,6 +72,7 @@ nav.navbar-active .hamburger span:last-child {
     height: 100vh;
     translate: translate(100%);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    opacity: 0;
 }
 
 ul {
@@ -108,7 +103,16 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10em;
-    background: lightslategray;
+    background: #a39171;
+}
+
+.logo{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 2px 2px var(--color-background) ;
+    color: var(--color-link);
+    font-style: italic;
 }
 
 .socials {
@@ -184,3 +188,53 @@ h2{
     position: relative
 
 }
+    flex-direction: column;    
+}
+
+.checkout-grid{
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-areas:
+      'cart'
+      'details' 
+      'payment' ;
+    grid-gap: 10px;
+    /* background: #a39171; */
+    padding: 1em;
+    border-radius: 2em
+}
+
+#checkout-cart {
+    grid-area: cart;
+}
+
+#checkout-form-details {
+    grid-area: details;
+}
+
+#checkout-payment-options{
+    grid-area: payment;
+}
+
+.checkout-grid > *{
+    /* background: #abc4ab; */
+    /* padding: 1em; */
+    border-radius: 2em;
+    font-size: 1em;
+    flex-grow: 1;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+}
+
+header{
+    background: #a39171;
+    padding: 10px;
+}
+
+

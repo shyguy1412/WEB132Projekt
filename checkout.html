@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="favicon(8)/favicon-96x96.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <title>Checkout | GROGU</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="logo">GROGU</span>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="checkout.html">Checkout</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="">Shop</a>
+            </li>
+            <li>
+                <a href="">Privacy Policy</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <h2>Checkout</h2>
+    <div class="checkout-grid">
+
+        <div id="checkout-cart">
+            <h3>Your Cart</h3>
+            <!-- Insert Cart Here -->
+        </div>
+
+
+        <form>
+            <h3>Delivery</h3>
+
+            <div id="checkout-form-details">
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label><br>
+
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label><br>
+
+                <input type="radio" id="nonbinary" name="gender" value="Nonbinary">
+                <label for="nonbinary">Non binary</label><br><br>
+
+                <label for="firstname">First Name</label><br>
+                <input type="text" name="firstname" placeholder="Laura"><br><br>
+
+                <label for="lastname">Last Name</label><br>
+                <input type="text" name="lastname" placeholder="Moore"><br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" name="email" placeholder="laura.moore@nonsense.com"><br><br>
+
+                <label for="adress">Adress</label><br>
+                <input type="text" name="adress" placeholder="Imagine Rode 42"><br><br>
+
+                <label for="postcode">Postal Code</label><br>
+                <input type="text" name="postcode" placeholder="42378"><br><br>
+
+                <label for="city">City</label><br>
+                <input type="text" name="city" placeholder="Cool City"><br><br>
+            </div>
+
+
+            <div id="checkout-payment-options">
+                <h3>Payment</h3>
+
+                <input type="radio" name="payment" id="klarna">
+                <label for="klarna">Klarna</label>
+
+                <input type="radio" name="payment" id="creditcard">
+                <label for="creditcard">Credit Card</label>
+
+                <input type="radio" name="payment" id="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+
+            <input type="submit">
+        </form>
+
+
+
+    </div>
+
+    <footer>
+        <div class="socials">
+
+            <span class="youtube">Youtube</span>
+            <span class="twitter">Twitter</span>
+            <span class="instagram">Instagram</span>
+            <span class="facebook">Facebook</span>
+        </div>
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Conditions</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
