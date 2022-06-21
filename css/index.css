@@ -1,0 +1,58 @@
+
+#about-headline{
+    margin-bottom: .5em;
+}
+
+#intro-grid {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'about'
+        'products'
+        'footer';
+    gap: 4em;
+    position: relative;
+    min-height: calc(100vh - var(--navbar-offset));
+}
+
+#intro-about {
+    grid-area: about;
+    background: var(--color-primary);
+    margin: 2em;
+    border: 2px solid var(--color-border);
+    padding: .5em;
+    text-align: center;
+    line-height: 1.2em;
+}
+
+#intro-about > p {
+    margin-bottom: 0.8em;
+}
+
+#intro-about > p > br {
+    margin-bottom: 0.8em;
+}
+
+#intro-products {
+    grid-area: products;
+    margin-bottom: 3.5em;
+}
+
+.featured-products-list {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.featured-products-list > .item {
+    width: 220px;
+    height: auto;
+    margin: 10px;
+    position: relative;
+}
+
+.featured-products-list > .item > h3 {
+    margin-bottom: 0.5em;
+}

@@ -1,0 +1,125 @@
+nav {
+    --nav-padding: 0.4em;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    align-items: center;
+    background: var(--color-navbar-background);
+    padding: var(--nav-padding);
+    gap: 1.5em;
+    z-index: 9999;
+    grid-area: nav;
+}
+
+.burger-menu {
+    --nav-color-background: var(--color-background);
+    --nav-color-foreground: var(--color-foreground);
+    position: relative;
+    display: inline-block;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.burger-menu > .hamburger {
+    position: relative;
+    padding: 0.4em;
+    margin: auto;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.burger-menu > .hamburger > span {
+    position: relative;
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: 0.5s;
+    transform-origin: 0% 0%;
+    background: var(--nav-color-foreground);
+}
+
+.burger-menu > .hamburger > span:first-child {
+    margin-top: 5px;
+}
+
+.burger-menu.burger-menu-active > .hamburger > span {
+    background: var(--nav-color-background);
+}
+
+.burger-menu.burger-menu-active > .hamburger > span:first-child {
+    transform: translate(0px, -5px) rotate(45deg);
+}
+
+.burger-menu.burger-menu-active > .hamburger > span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    transform-origin: 50% 50%;
+}
+
+.burger-menu.burger-menu-active > .hamburger > span:last-child {
+    transform: translate(-2px, 0px) rotate(-45deg);
+}
+
+
+.burger-menu > ul {
+    background: var(--nav-color-foreground);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: min(20em, 100vw);
+    height: 100vh;
+    margin: 0;
+    padding-top: 3.5em;
+    padding-left: 1em;
+    transform: translate(calc(-100% - var(--nav-padding)), calc(var(--nav-padding) * -1));
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.burger-menu.burger-menu-active > ul {
+    transform: translate(calc(var(--nav-padding) * -1), calc(var(--nav-padding) * -1));
+}
+
+.burger-menu > ul > li {
+    margin-bottom: 20px;
+    list-style: none;
+    text-align: left;
+}
+
+.burger-menu > ul > li > * {
+    text-decoration: none;
+    transition: 0.1s;
+    font-size: 1.5em;
+    color: var(--nav-color-background);
+}
+
+.burger-menu > ul > li > a:hover {
+    color: var(--color-primary);
+}
+
+.cart-button {
+    font-size: 28px;
+    position: absolute;
+    right: 30px;
+    color: var(--color-foreground);
+}
+
+.cart-button, .cart-button * {
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    color: var(--color-primary);
+}
+
+.darkmode-toggle {
+    cursor: pointer;
+}
+
+.darkmode-toggle:hover{
+    color: var(--color-primary);
+}

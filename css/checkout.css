@@ -1,0 +1,42 @@
+.checkout-grid {
+    display: grid;
+    grid-template-areas:
+        'cart'
+        'form';
+    grid-gap: 10px;
+    padding: 1em;
+    margin: 1em;
+}
+
+#checkout-cart {
+    grid-area: cart;
+}
+
+#checkout-form-details {
+    grid-area: details;
+}
+
+#checkout-form-details > input{
+    margin-bottom: 0.8em;
+} 
+
+#checkout-form {
+    display: grid;
+    grid-template-areas:
+    'details'
+    'payment';
+    grid-area: form;
+}
+
+#checkout-form input[type=submit]{
+    margin-top: 0.8em;
+    width: 150px;
+}
+
+#checkout-payment-options {
+    grid-area: payment;
+}
+
+.checkout-grid>* {
+    font-size: 1em;
+}

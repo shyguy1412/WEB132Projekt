@@ -28,11 +28,15 @@ async function loadProductList() {
 
 function generateProductElements(products) {
     const templateHTML = /* html */`
-    <div class="product">
-        <h3>$name</h3>
-        <span>$description</span>
-        <span>$price</span>
-        <button onclick="addToCart($ID)">Add to Cart</button>
+    <div class="shop-item grogu-card grogu-card-clickable" id="$ID">
+    <h3>$name</h3>
+    <img class="product-img" src="https://placekitten.com/500/500" alt="$name">
+    <div class="product-info">
+        <p>New Collection</p>
+    </div>
+    <div class="product-price">
+        <h3><sup>$17.99</sup></h3>
+    </div>
     </div>
     `;
 
@@ -116,18 +120,27 @@ document.addEventListener('cart-changed', () => updateShoppingCartElement());
 document.addEventListener('DOMContentLoaded', e => {
     loadProductList().then(products => {
         productList = products
-        generateProductElements(products);
-        updateShoppingCartElement(products);
+        if(document.querySelector('.product-list'))generateProductElements(products);
+        if(document.querySelector('.shopping-cart'))updateShoppingCartElement(products);
     });
 });
 
-const navbar = document.querySelector('nav');
-const hamburger = navbar.querySelector('.hamburger');
+const burgerMenu = document.querySelector('.burger-menu');
+const hamburger = burgerMenu.querySelector('.hamburger');
 console.log(hamburger);
 hamburger.addEventListener('click', () => {
-    if(navbar.classList.contains('navbar-active')){
-        navbar.classList.remove('navbar-active');
+    if(burgerMenu.classList.contains('burger-menu-active')){
+        burgerMenu.classList.remove('burger-menu-active');
     } else {
-        navbar.classList.add('navbar-active');
+        burgerMenu.classList.add('burger-menu-active');
+    }
+});
+
+const darkmodeToggle = document.querySelector('.darkmode-toggle');
+darkmodeToggle.addEventListener('click', () => {
+    if(document.body.classList.contains('darkmode')){
+        document.body.classList.remove('darkmode');
+    } else {
+        document.body.classList.add('darkmode');
     }
 });

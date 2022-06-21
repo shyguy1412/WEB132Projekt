@@ -1,0 +1,9 @@
+#contact-form{
+    margin: 1em;
+}
+
+#contact-form > input,
+#contact-form > select,
+#contact-form > textarea{
+    margin-bottom: 0.8em;
+}

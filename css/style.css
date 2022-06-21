@@ -1,0 +1,105 @@
+@import url(navbar.css);
+@import url(footer.css);
+@import url(checkout.css);
+@import url(cart.css);
+@import url(index.css);
+@import url(shop.css);
+@import url(contact.css);
+
+:root {
+    --color-background: #ecdecd;
+    --color-foreground: #343434;
+    --color-primary: #abc4ab;
+    --color-border: #a39171;
+    --color-button-hover: #857e73;
+    --color-navbar-background: white;
+
+    --navbar-offset: 60px;
+    --footer-height: 3.5em;
+}
+
+.darkmode {
+    --color-foreground: #ecdecd;
+    --color-background: #343434;
+    --color-primary: #abc4ab;
+    --color-border: #a39171;
+    --color-button-hover: #857e73;
+    --color-navbar-background: #343434;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
+body:nth-child(2){
+    margin-top: var(--navbar-offset);
+}
+
+a {
+    color: var(--color-foreground);
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h2 {
+    text-align: center;
+}
+
+input,
+textarea,
+select {
+    background: #eee;
+    border: 1px solid var(--color-border);
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.grogu-card {
+    background: var(--color-primary);
+    border: 2px solid var(--color-border);
+    position: relative;
+    padding: .5em;
+    transition: 0.15s;
+}
+
+a.grogu-card,
+a.grogu-card:hover {
+    color: var(--color-foreground);
+}
+
+a.grogu-card:hover,
+.grogu-card.grogu-card-clickable:hover {
+    box-shadow: 0px 0px 10px 5px var(--color-border);
+}
+
+.grogu-text {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 2px 2px var(--color-primary);
+    color: var(--color-foreground);
+    font-style: italic;
+}
+
+a.grogu-text:hover {
+    text-shadow: 2px 2px var(--color-foreground);
+}
+
+.product-img {
+    width: 85%;
+    max-width: 200px;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--color-border);
+}
