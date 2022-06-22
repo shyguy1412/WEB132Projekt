@@ -3,12 +3,13 @@
     margin-bottom: .5em;
 }
 .groguhead {
-      
-    display: flex;
-    position: relative;
+    position: absolute;
     align-content: center;
-    margin-bottom: -40px;
-    width: 500px;
+    /* margin-bottom: -40px;
+    width: 500px; */
+    width: 320px;
+    transform: translate(-50%, -110%);
+    z-index: -1;
 }
 
 #intro-grid {
@@ -25,10 +26,8 @@
 
 #intro-about {
     grid-area: about;
-    background: var(--color-primary);
     margin: 2em;
-    border: 2px solid var(--color-border);
-    padding: .5em;
+    margin-top: 4.5em;
     text-align: center;
     line-height: 1.2em;
 }
@@ -67,11 +66,8 @@
 }
 
 .videoTrailer  {
-   
-    display: flexbox;;
     align-content: center;
     position: relative;
     margin-top: 50px;
     margin-bottom: 20px;
-    
 }

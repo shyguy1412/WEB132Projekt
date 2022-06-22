@@ -9,7 +9,8 @@
         "ID": 2,
         "name": "Produkt 2",
         "description": "Ein zweites tolles Produkt",
-        "price": "10,00€"
+        "price": "10,00€",
+        "featured": true
     },
     {
         "ID": 3,
