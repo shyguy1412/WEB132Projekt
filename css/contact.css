@@ -7,3 +7,7 @@
 #contact-form > textarea{
     margin-bottom: 0.8em;
 }
+
+#contact-form > h2 {
+    margin: 0;
+}
