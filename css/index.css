@@ -2,6 +2,14 @@
 #about-headline{
     margin-bottom: .5em;
 }
+.groguhead {
+      
+    display: flex;
+    position: relative;
+    align-content: center;
+    margin-bottom: -40px;
+    width: 500px;
+}
 
 #intro-grid {
     position: relative;
@@ -24,6 +32,7 @@
     text-align: center;
     line-height: 1.2em;
 }
+
 
 #intro-about > p {
     margin-bottom: 0.8em;
@@ -55,4 +64,14 @@
 
 .featured-products-list > .item > h3 {
     margin-bottom: 0.5em;
+}
+
+.videoTrailer  {
+   
+    display: flexbox;;
+    align-content: center;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    
 }
