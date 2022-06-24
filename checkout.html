@@ -68,12 +68,15 @@
             <div id="checkout-form-details">
                 <h3>Delivery</h3>
 
+                <i class="fa-regular fa-user"></i>
                 <label for="firstname">First Name</label><br>
                 <input required type="text" name="firstname" placeholder="Laura"><br>
 
+                <i class="fa-regular fa-user"></i>
                 <label for="lastname">Last Name</label><br>
                 <input required type="text" name="lastname" placeholder="Moore"><br>
 
+                <i class="fa-regular fa-envelope"></i>
                 <label for="email">Email</label><br>
                 <input required type="email" name="email" placeholder="laura.moore@nonsense.com"><br>
 
@@ -91,14 +94,14 @@
             <div id="checkout-payment-options">
                 <h3>Payment</h3>
 
-                <input required type="radio" name="payment" id="klarna">
-                <label for="klarna">Klarna</label>
+                <input required type="radio" name="payment" id="apple-pay">
+                <label class="radio-label" for="apple-pay"><i class="fa-brands fa-cc-apple-pay"></i></label>
 
                 <input required type="radio" name="payment" id="creditcard">
-                <label for="creditcard">Credit Card</label>
+                <label class="radio-label" for="creditcard"><i class="fa-brands fa-cc-visa"></i></label>
 
                 <input required type="radio" name="payment" id="paypal">
-                <label for="paypal">PayPal</label>
+                <label class="radio-label" for="paypal"><i class="fa-brands fa-cc-paypal"></i></label>
             </div>
 
             <input type="submit" value="Submit">

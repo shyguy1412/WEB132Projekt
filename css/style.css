@@ -93,11 +93,6 @@ input[type="submit"]:hover{
     color: var(--color-border);
 }
 
-input[type="radio"]{
-    padding: 0em;
-    margin: 0em;
-}
-
 textarea {
     max-width: 100%;
 }

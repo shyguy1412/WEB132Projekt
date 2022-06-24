@@ -40,3 +40,8 @@
 .checkout-grid>* {
     font-size: 1em;
 }
+
+input[type="radio"]{
+    display: none !important;
+}
+
