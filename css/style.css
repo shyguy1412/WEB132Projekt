@@ -56,11 +56,42 @@ h2 {
     text-align: center;
 }
 
+h3{
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
 input,
 textarea,
 select {
     background: #eee;
     border: 1px solid var(--color-border);
+    /*source : w3school */
+    width: 100%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus{
+    background-color: lightgrey;
+    outline: none;
+}
+
+input[type="submit"]{
+    background-color: var(--color-border);
+    border: none;
+    color: var(--color-foreground);
+}
+
+input[type="submit"]:hover{
+    background-color: var(--color-foreground);
+    color: var(--color-border);
+}
+
+input[type="radio"]{
+    padding: 0em;
+    margin: 0em;
 }
 
 textarea {

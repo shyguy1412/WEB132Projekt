@@ -11,3 +11,7 @@
 #contact-form > h2 {
     margin: 0;
 }
+
+option:hover{
+    color: lightgrey;
+}
