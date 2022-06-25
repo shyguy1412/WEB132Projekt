@@ -6,6 +6,7 @@
 @import url(shop.css);
 @import url(contact.css);
 
+
 :root {
     --color-background: #ecdecd;
     --color-foreground: #343434;
@@ -34,7 +35,7 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--color-background);
+    background: var(--color-background);
     color: var(--color-foreground);
 }
 

@@ -22,7 +22,7 @@ nav {
     z-index: 1;
 }
 
-.burger-menu > .hamburger {
+.burger-menu>.hamburger {
     position: relative;
     padding: 0.4em;
     margin: auto;
@@ -31,7 +31,7 @@ nav {
     transition: 0.5s;
 }
 
-.burger-menu > .hamburger > span {
+.burger-menu>.hamburger>span {
     position: relative;
     display: block;
     width: 33px;
@@ -43,30 +43,30 @@ nav {
     background: var(--nav-color-foreground);
 }
 
-.burger-menu > .hamburger > span:first-child {
+.burger-menu>.hamburger>span:first-child {
     margin-top: 5px;
 }
 
-.burger-menu.burger-menu-active > .hamburger > span {
+.burger-menu.burger-menu-active>.hamburger>span {
     background: var(--nav-color-background);
 }
 
-.burger-menu.burger-menu-active > .hamburger > span:first-child {
+.burger-menu.burger-menu-active>.hamburger>span:first-child {
     transform: translate(0px, -5px) rotate(45deg);
 }
 
-.burger-menu.burger-menu-active > .hamburger > span:nth-child(2) {
+.burger-menu.burger-menu-active>.hamburger>span:nth-child(2) {
     opacity: 0;
     transform: scale(0.2, 0.2);
     transform-origin: 50% 50%;
 }
 
-.burger-menu.burger-menu-active > .hamburger > span:last-child {
+.burger-menu.burger-menu-active>.hamburger>span:last-child {
     transform: translate(-2px, 0px) rotate(-45deg);
 }
 
 
-.burger-menu > ul {
+.burger-menu>ul {
     background: var(--nav-color-foreground);
     display: inline-block;
     position: absolute;
@@ -80,24 +80,24 @@ nav {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-.burger-menu.burger-menu-active > ul {
+.burger-menu.burger-menu-active>ul {
     transform: translate(calc(var(--nav-padding) * -1), calc(var(--nav-padding) * -1));
 }
 
-.burger-menu > ul > li {
+.burger-menu>ul>li {
     margin-bottom: 20px;
     list-style: none;
     text-align: left;
 }
 
-.burger-menu > ul > li > * {
+.burger-menu>ul>li>* {
     text-decoration: none;
     transition: 0.1s;
     font-size: 1.5em;
     color: var(--nav-color-background);
 }
 
-.burger-menu > ul > li > a:hover {
+.burger-menu>ul>li>a:hover {
     color: var(--color-primary);
 }
 
@@ -108,7 +108,8 @@ nav {
     color: var(--color-foreground);
 }
 
-.cart-button, .cart-button * {
+.cart-button,
+.cart-button * {
     transition: 0.3s;
 }
 
@@ -120,6 +121,24 @@ nav {
     cursor: pointer;
 }
 
-.darkmode-toggle:hover{
+.darkmode-toggle:hover {
     color: var(--color-primary);
+}
+
+.fa-solid.fa-bag-shopping > .cart-counter {
+    content: var(--cart-count);
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary);
+    color: var(--color-foreground);
+    border-radius: 100%;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.5em;
+    right: 0;
+    top: 0;
+    transform: translateX(50%);
+    opacity: 0;
 }

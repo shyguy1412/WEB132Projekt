@@ -1,29 +1,82 @@
 [
     {
-        "ID": 1,
-        "name": "Produkt 1",
-        "description": "Ein tolles Produkt",
-        "price": "12,50€"
+        "ID": "grogu_mug",
+        "name": "Grogu Mug",
+        "description": "A cute mug that looks like Grogu's face!",
+        "price": "8,99€",
+        "img_link": "img/merch/grogu_becher.jpg",
+        "featured": false
     },
     {
-        "ID": 2,
-        "name": "Produkt 2",
-        "description": "Ein zweites tolles Produkt",
-        "price": "10,00€",
+        "ID": "grogu_toaster",
+        "name": "Grogu Toaster",
+        "description": "Start your day happier with a Grogu-faced toast in the morning!",
+        "price": "49,99€",
+        "img_link": "img/merch/grogu_toaster.jpg",
+        "featured": false
+    },
+    {
+        "ID": "grogu_shirt_green",
+        "name": "Green shirt (Grogu)",
+        "description": "Green T-Shirt with Grogu print",
+        "price": "19,99€",
+        "img_link": "img/merch/grogu_tshirt_green.jpg",
+        "featured": false
+    },
+    {
+        "ID": "grogu_socks",
+        "name": "Grogu Socks",
+        "description": "Perfect to keep your feet warm",
+        "price": "6,99€",
+        "img_link": "img/merch/grogu-socks.jpg",
         "featured": true
     },
     {
-        "ID": 3,
-        "name": "Produkt 3",
-        "description": "Ein letzes tolles Produkt",
-        "price": "22,99€",
-        "neuesdaten": 23
+        "ID": "grogu_keychain",
+        "name": "Grogu Keychain",
+        "description": "With the power of the force you wont ever loose your key again",
+        "price": "3,99€",
+        "img_link": "img/merch/keychain_grogu.webp",
+        "featured": true
     },
     {
-        "ID": 4,
-        "name": "Produkt 4",
-        "description": "Ein neues neues tolles Produkt",
-        "price": "22,99€"
+        "ID": "mando_mug",
+        "name": "Mando Mug",
+        "description": "Coffe mug in Mando's helmet design",
+        "price": "8,99€",
+        "img_link": "img/merch/mando_becher.jpg",
+        "featured": true
+    },
+    {
+        "ID": "mando_head_shirt",
+        "name": "Black T-Shirt (Mando)",
+        "description": "Black T-Shirt with Mando print",
+        "price": "19,99€",
+        "img_link": "img/merch/mando_head_tshirt.jpg",
+        "featured": false
+    },
+    {
+        "ID": "mando_helm_lego",
+        "name": "Mando Helm Lego Set",
+        "description": "Build your own Mando Helm!",
+        "price": "49,99€",
+        "img_link": "img/merch/mando_helm_lego.jpg",
+        "featured": true
+    },
+    {
+        "ID": "mando_poster",
+        "name": "Mando Poster",
+        "description": "Big Poster with Mandos face",
+        "price": "3,99€",
+        "img_link": "img/merch/mando_poster.jpg",
+        "featured": false
+    },
+    {
+        "ID": "mando_grogu_shirt",
+        "name": "Black T-Shirt (Mando & Grogu)",
+        "description": "Black T-Shirt with Mando and Grogu print",
+        "price": "19,99€",
+        "img_link": "img/merch/mando_with_child_tshirt.jpg",
+        "featured": true
     }
-
 ]

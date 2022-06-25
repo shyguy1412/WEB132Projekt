@@ -1,7 +1,7 @@
-
 #about-headline{
     margin-bottom: .5em;
 }
+
 .groguhead {
     position: absolute;
     align-content: center;
@@ -46,22 +46,20 @@
     margin-bottom: 3.5em;
 }
 
-.featured-products-list {
-    width: auto;
-    display: flex;
+.featured-product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
     justify-content: center;
+    gap: 0.8em;
+    padding: 3em 1em;
+    padding-bottom: 7em;
+}
+
+.featured-product-list > .featured-item {
     text-align: center;
-    flex-wrap: wrap;
 }
 
-.featured-products-list > .item {
-    width: 220px;
-    height: auto;
-    margin: 10px;
-    position: relative;
-}
-
-.featured-products-list > .item > h3 {
+.featured-product-list > .item > h3 {
     margin-bottom: 0.5em;
 }
 

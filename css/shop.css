@@ -1,4 +1,4 @@
-#shop-wrap{
+#shop-wrap {
     position: relative;
     min-height: calc(100vh - var(--navbar-offset));
 }
@@ -15,4 +15,13 @@
 
 .shop-item {
     text-align: center;
+    scroll-margin-top: 5em;
+}
+
+.shop-item>button {
+    border-radius: 0;
+    border: 1px solid var(--color-border);
+    font-size: 1.2em;
+    width: 75%;
+    columns: var(--color-foreground);
 }

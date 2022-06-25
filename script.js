@@ -26,17 +26,18 @@ async function loadProductList() {
     return await fetch(PRODUCT_LIST_PATH).then(response => response.json());
 }
 
-function generateProductElements(products) {
+function generateProductElements(products, target_container) {
     const templateHTML = /* html */`
     <div class="shop-item grogu-card grogu-card-clickable" id="$ID">
-    <h3>$name</h3>
-    <img class="product-img" src="https://placekitten.com/500/500" alt="$name">
-    <div class="product-info">
-        <p>New Collection</p>
-    </div>
-    <div class="product-price">
-        <h3><sup>$17.99</sup></h3>
-    </div>
+        <h3>$name</h3>
+        <img class="product-img" src="$img_link" alt="$name">
+        <div class="product-info">
+            <p>$description</p>
+        </div>
+        <div class="product-price">
+            <p>$price</p>
+        </div>
+        <button onclick="addToCart('$ID')">Buy!</Button>
     </div>
     `;
 
@@ -47,23 +48,59 @@ function generateProductElements(products) {
 
 }
 
+function generateFeaturedProductElements(products, target_container) {
+    const templateHTML = /* html */`
+    <a href="shop#$ID" class="featured-item grogu-card grogu-card-clickable" id="$ID">
+        <h3>$name</h3>
+        <img class="product-img" src="$img_link" alt="$name">
+        <div class="product-info">
+            <p>$description</p>
+        </div>
+        <div class="product-price">
+           <p>$price</p>
+        </div>
+    </a>
+    `;
+
+    products.forEach(product => {
+        const productHTML = evaluateTemplate(templateHTML, product); //crate product HTML
+        document.querySelector('.featured-product-list').innerHTML += productHTML;  //append product to list
+    })
+
+}
+
+function updateCartCounter(){
+    
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const counter = document.querySelector('.fa-solid.fa-bag-shopping > .cart-counter');
+    console.log(counter);
+    if(counter){
+        const count = cart.length
+        if(!count)counter.style.opacity = 0;
+        else counter.style.opacity = 1;
+        counter.innerHTML = count;
+    }
+
+}
 
 function updateShoppingCartElement(products = productList) {
     if (!products) throw new Error('Cart update without product list');
+    const shoppingCartElement = document.querySelector('.shopping-cart');
+    if (!shoppingCartElement) return;
+    shoppingCartElement.innerHTML = '';
 
-    document.querySelector('.shopping-cart').innerHTML = '';
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     const templateHTML = /* html */`
     <div id="$ID" class="cart-product">
         <h3>$name</h3>
         <span>$price</span>
         <span>$count</span>
-        <button onclick="addToCart($ID)">+</button>
-        <button onclick="removeFromCart($ID)">-</button>
-        <button onclick="removeAllFromCart($ID)">X</button>
+        <button onclick="addToCart('$ID')">+</button>
+        <button onclick="removeFromCart('$ID')">-</button>
+        <button onclick="removeAllFromCart('$ID')">X</button>
     </div>
     `
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const cartProducts = cart.reduce((acc, productID, index, arr) => {
         if (index == arr.indexOf(productID)) {
             acc.push({
@@ -76,7 +113,7 @@ function updateShoppingCartElement(products = productList) {
 
     cartProducts.forEach(product => {
         const productHTML = evaluateTemplate(templateHTML, product);
-        document.querySelector('.shopping-cart').innerHTML += productHTML;
+        shoppingCartElement.innerHTML += productHTML;
     });
 }
 
@@ -85,6 +122,7 @@ function addToCart(ID) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     //add new item
     cart.push(ID);
+    console.log(ID, cart);
     //save cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -107,7 +145,7 @@ function removeFromCart(ID) {
 function removeAllFromCart(ID) {
     //get cart items
     const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    .filter(value => value != ID);//remove items
+        .filter(value => value != ID);//remove items
     //save cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -115,13 +153,25 @@ function removeAllFromCart(ID) {
     document.dispatchEvent(cartChangedEvent);
 }
 
+function emptyCart(){
+    localStorage.setItem('cart', JSON.stringify([]));
+}
+
 document.addEventListener('cart-changed', () => updateShoppingCartElement());
+document.addEventListener('cart-changed', () => updateCartCounter());
 
 document.addEventListener('DOMContentLoaded', e => {
     loadProductList().then(products => {
         productList = products
-        if(document.querySelector('.product-list'))generateProductElements(products);
-        if(document.querySelector('.shopping-cart'))updateShoppingCartElement(products);
+        if (document.querySelector('.product-list')) generateProductElements(products);
+        if (document.querySelector('.featured-product-list')) generateFeaturedProductElements(products);
+        if (document.querySelector('.shopping-cart')) updateShoppingCartElement(products);
+
+        if (document.location.hash) {
+            const target = document.querySelector(document.location.hash);
+            target.scrollIntoView();
+        }
+        updateCartCounter();
     });
 });
 
@@ -129,7 +179,7 @@ const burgerMenu = document.querySelector('.burger-menu');
 const hamburger = burgerMenu.querySelector('.hamburger');
 console.log(hamburger);
 hamburger.addEventListener('click', () => {
-    if(burgerMenu.classList.contains('burger-menu-active')){
+    if (burgerMenu.classList.contains('burger-menu-active')) {
         burgerMenu.classList.remove('burger-menu-active');
     } else {
         burgerMenu.classList.add('burger-menu-active');
@@ -138,7 +188,7 @@ hamburger.addEventListener('click', () => {
 
 const darkmodeToggle = document.querySelector('.darkmode-toggle');
 darkmodeToggle.addEventListener('click', () => {
-    if(document.body.classList.contains('darkmode')){
+    if (document.body.classList.contains('darkmode')) {
         document.body.classList.remove('darkmode');
     } else {
         document.body.classList.add('darkmode');
