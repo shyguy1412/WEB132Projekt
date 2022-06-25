@@ -71,7 +71,7 @@ nav {
     display: inline-block;
     position: absolute;
     top: 0;
-    width: min(20em, 100vw);
+    width: min(15em, 100vw);
     height: 100vh;
     margin: 0;
     padding-top: 3.5em;

@@ -5,6 +5,8 @@
 @import url(index.css);
 @import url(shop.css);
 @import url(contact.css);
+@import url(terms.css);
+@import url(thankyou.css);
 
 
 :root {
@@ -83,13 +85,14 @@ input:focus, textarea:focus{
     outline: none;
 }
 
-input[type="submit"]{
+input[type="submit"], button{
     background-color: var(--color-border);
     border: none;
     color: var(--color-foreground);
+    font-size: 1.1em;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover, button:hover{
     background-color: var(--color-foreground);
     color: var(--color-border);
 }

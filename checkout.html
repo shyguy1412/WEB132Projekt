@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="icon" href="img/favicon/favicon-96x96.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Checkout | GROGU</title>
 </head>
@@ -40,28 +40,20 @@
             </ul>
         </div>
         <a href="index.html" class="grogu-text logo">GROGU</a>
-        <a href="cart.html" class="cart-button"><i class="fa-solid fa-bag-shopping"><span class="cart-counter"></span></i></a>
+        <a href="cart.html" class="cart-button"><i class="fa-solid fa-bag-shopping"><span
+                    class="cart-counter"></span></i></a>
     </nav>
 
     <div class="checkout-grid">
 
         <div class="grogu-card" id="checkout-cart">
-            <h3>Your Cart</h3>
-            <div id="$ID" class="cart-product">
-                <h3>$name</h3>
-                <span>$price</span>
-                <span>$count</span>
-            </div>
-            <div id="$ID" class="cart-product">
-                <h3>$name</h3>
-                <span>$price</span>
-                <span>$count</span>
-            </div>
+            <h2>Your Cart</h2>
+            <div class="shopping-cart"></div>
         </div>
 
 
 
-        <form action="#" id="checkout-form" class="grogu-card">
+        <form action="/thankyou.html" onsubmit="emptyCart()" id="checkout-form" class="grogu-card">
 
             <div id="checkout-form-details">
                 <h3>Delivery</h3>
@@ -105,30 +97,27 @@
             <input type="submit" value="Submit">
         </form>
 
-
+        <!-- <footer>
+            <div>
+                <a href="youtube.com">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="instagram.com">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="facebook.com">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="twitter.com">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="twitch.com">
+                    <i class="fa-brands fa-twitch"></i>
+                </a>
+            </div>
+        </footer> -->
 
     </div>
-
-    <footer>
-        <div>
-            <a href="youtube.com">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="instagram.com">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="facebook.com">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="twitter.com">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="twitch.com">
-                <i class="fa-brands fa-twitch"></i>
-            </a>
-        </div>
-    </footer>
-
 </body>
 
 </html>

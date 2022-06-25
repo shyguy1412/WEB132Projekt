@@ -69,14 +69,14 @@ function generateFeaturedProductElements(products, target_container) {
 
 }
 
-function updateCartCounter(){
-    
+function updateCartCounter() {
+
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const counter = document.querySelector('.fa-solid.fa-bag-shopping > .cart-counter');
     console.log(counter);
-    if(counter){
+    if (counter) {
         const count = cart.length
-        if(!count)counter.style.opacity = 0;
+        if (!count) counter.style.opacity = 0;
         else counter.style.opacity = 1;
         counter.innerHTML = count;
     }
@@ -93,6 +93,7 @@ function updateShoppingCartElement(products = productList) {
 
     const templateHTML = /* html */`
     <div id="$ID" class="cart-product">
+        <img class="product-img" src="$img_link" alt="$name">
         <h3>$name</h3>
         <span>$price</span>
         <span>$count</span>
@@ -153,7 +154,7 @@ function removeAllFromCart(ID) {
     document.dispatchEvent(cartChangedEvent);
 }
 
-function emptyCart(){
+function emptyCart() {
     localStorage.setItem('cart', JSON.stringify([]));
 }
 
