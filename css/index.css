@@ -56,6 +56,10 @@
     margin-bottom: 3.5em;
 }
 
+#mando-intro-start{
+    margin-top: 2.2em;
+}
+
 .featured-product-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
