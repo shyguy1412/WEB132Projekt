@@ -31,9 +31,10 @@
     --color-navbar-background: #343434;
 }
 
-html {
+/* Wofür brauchen wir das?*/
+/* html {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 body {
     margin: 0;
@@ -59,7 +60,6 @@ h1,
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.3em;
-    margin: 0;
 }
 
 input,
@@ -137,5 +137,4 @@ a.grogu-text:hover {
     width: 85%;
     max-width: 200px;
     aspect-ratio: 1/1;
-    /* border: 1px solid var(--color-border); */
 }
