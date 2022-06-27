@@ -1,13 +1,9 @@
 #about-headline {
-    margin-bottom: .5em;
     text-align: center;
 }
 
 .groguhead {
     position: absolute;
-    align-content: center;
-    /* margin-bottom: -40px;
-    width: 500px; */
     width: 320px;
     transform: translate(-50%, -110%);
     z-index: -1;
@@ -28,7 +24,6 @@
 
 #intro-about {
     grid-area: about;
-    margin: 2em;
     margin-top: 4.5em;
     text-align: center;
     line-height: 1.2em;
@@ -45,10 +40,6 @@
 
 .trailer-m {
     grid-area: trailer;
-    position: relative;
-    width: 80%;
-    margin: auto;
-    align-content: center;
 }
 
 #intro-products {
@@ -74,5 +65,7 @@
 }
 
 .video-trailer{
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
