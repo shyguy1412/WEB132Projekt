@@ -4,8 +4,6 @@
         'cart'
         'form';
     grid-gap: 10px;
-    padding: 1em;
-    margin: 1em;
 }
 
 #checkout-cart {

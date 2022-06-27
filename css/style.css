@@ -18,7 +18,7 @@
     --color-button-hover: #857e73;
     --color-navbar-background: white;
 
-    --navbar-offset: 60px;
+    --navbar-offset: 75px;
     --footer-height: 3.5em;
 }
 
@@ -41,7 +41,7 @@ body {
     color: var(--color-foreground);
 }
 
-body:nth-child(2){
+body:nth-child(2) {
     margin-top: var(--navbar-offset);
 }
 
@@ -55,14 +55,11 @@ a:hover {
     color: var(--color-primary);
 }
 
-/* h3{
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-} */
-
-h1, h2{
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 1.3em;
+h1,
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    margin: 0;
 }
 
 input,
@@ -70,26 +67,28 @@ textarea,
 select {
     background: #eee;
     border: 1px solid var(--color-border);
-    /*source : w3school */
     width: 100%;
     padding: 12px 10px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
     background-color: lightgrey;
     outline: none;
 }
 
-input[type="submit"], button{
+input[type="submit"],
+button {
     background-color: var(--color-border);
     border: none;
     color: var(--color-foreground);
     font-size: 1.1em;
 }
 
-input[type="submit"]:hover, button:hover{
+input[type="submit"]:hover,
+button:hover {
     background-color: var(--color-foreground);
     color: var(--color-border);
 }
@@ -127,6 +126,11 @@ a.grogu-card:hover,
 
 a.grogu-text:hover {
     text-shadow: 2px 2px var(--color-foreground);
+}
+
+.grid-container {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .product-img {
