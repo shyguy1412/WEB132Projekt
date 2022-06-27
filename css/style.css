@@ -55,17 +55,14 @@ a:hover {
     color: var(--color-primary);
 }
 
-h2 {
-    text-align: center;
-}
-
-h3{
+/* h3{
     margin-top: 0.5em;
     margin-bottom: 1em;
-}
+} */
 
-h2, h3{
+h1, h2{
    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 1.3em;
 }
 
 input,

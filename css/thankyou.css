@@ -1,9 +1,13 @@
 
 .mando-grogu{
-    
-    position:absolute;
-    align-content: center;
-    margin: 3em;
-    width:700px;
+    width: 90%;
+}
 
+#image-thankyou{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    height: 100vh;
+    transform: translateY(-15%);
 }

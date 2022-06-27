@@ -1,5 +1,6 @@
 #about-headline {
     margin-bottom: .5em;
+    text-align: center;
 }
 
 .groguhead {
@@ -20,7 +21,7 @@
         'trailer'
         'products'
         'footer';
-    gap: 4em;
+    gap: 1em;
     position: relative;
     min-height: calc(100vh - var(--navbar-offset));
 }

@@ -1,10 +1,15 @@
-h1{
+/* h1{
     padding: 0.7em;
-}
+} */
 .shipping {
     position: absolute;
     margin: 0.9em;
 }
+
+.shipping > p {
+    border-bottom: 1px solid var(--color-foreground);
+}
+
 .refund {
 text-align: center;
 
