@@ -1,10 +1,13 @@
+//Path to file containing products
 const PRODUCT_LIST_PATH = 'products.json';
 
+//To memoize the product list
 let productList;
 
+//Takes a template string and replaces placeholders with data from an objet
 function evaluateTemplate(templateHTML, data) {
     //get all the keys from the template
-    const keys = [...templateHTML.matchAll(/\$[a-zA-Z$_][a-zA-Z0-9$_]*/g)] //returns array of result array
+    const keys = [...templateHTML.matchAll(/\$[a-zA-Z$_][a-zA-Z0-9$_]*/g)] //returns array of result arrays
         .flat() //converts array of arrays into array of strings
         .filter((value, index, arr) => index == arr.lastIndexOf(value)); //removes duplicates
 
@@ -26,7 +29,9 @@ async function loadProductList() {
     return await fetch(PRODUCT_LIST_PATH).then(response => response.json());
 }
 
-function generateProductElements(products, target_container) {
+//Generates and inserts the HTML for products
+function generateProductElements(products) {
+    //HTML Template for products
     const templateHTML = /* html */`
     <div class="shop-item grogu-card grogu-card-clickable" id="$ID">
         <h3>$name</h3>
@@ -42,13 +47,15 @@ function generateProductElements(products, target_container) {
     `;
 
     products.forEach(product => {
-        const productHTML = evaluateTemplate(templateHTML, product); //crate product HTML
+        const productHTML = evaluateTemplate(templateHTML, product); //create product HTML
         document.querySelector('.product-list').innerHTML += productHTML;  //append product to list
     })
 
 }
 
-function generateFeaturedProductElements(products, target_container) {
+//Generates and inserts the HTML for featured products
+function generateFeaturedProductElements(products) {
+    //HTML Template
     const templateHTML = /* html */`
     <a href="shop#$ID" class="featured-item grogu-card grogu-card-clickable" id="$ID">
         <h3>$name</h3>
@@ -69,28 +76,30 @@ function generateFeaturedProductElements(products, target_container) {
 
 }
 
+//Updates the cart counter when the cart changes
 function updateCartCounter() {
-
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const counter = document.querySelector('.fa-solid.fa-bag-shopping > .cart-counter');
-    console.log(counter);
+
     if (counter) {
         const count = cart.length
-        if (!count) counter.style.opacity = 0;
+        if (!count) counter.style.opacity = 0; //hide counter if count == 0
         else counter.style.opacity = 1;
         counter.innerHTML = count;
     }
 
 }
 
+//Updates the combined total of all products in the cart
 function updateCartTotal(products = productList) {
-    if (!products) throw new Error('Cart update without product list');
-    const cartTotalElement = document.querySelector('.cart-total');
-    if (!cartTotalElement) return;
-    cartTotalElement.innerHTML = '';
+    if (!products) throw new Error('Cart update without product list'); //ensure product list is loaded
+    const cartTotalElement = document.querySelector('.cart-total'); 
+    if (!cartTotalElement) return; //ensure cart element exists
+    cartTotalElement.innerHTML = ''; //clear html
 
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
+    //converts the array of product IDs into an array of products with their count
     const cartProducts = cart.reduce((acc, productID, index, arr) => {
         if (index == arr.indexOf(productID)) {
             acc.push({
@@ -101,20 +110,22 @@ function updateCartTotal(products = productList) {
         return acc;
     }, []);
 
+    //Sum up the total
     let sum = 0;
-
     cartProducts.forEach(product => {
         sum += product.price * product.count;
     });
+    sum = sum.toFixed(2); //round to 2 digits to avoid floating point imprecision
 
-    sum = sum.toFixed(2);
+
     cartTotalElement.innerHTML = sum + '€';
 }
 
+//Updates the cart elements
 function updateCheckoutCartElement(products = productList) {
-    if (!products) throw new Error('Cart update without product list');
+    if (!products) throw new Error('Cart update without product list'); //ensure product list is loaded
     const shoppingCartElement = document.querySelector('.checkout-cart');
-    if (!shoppingCartElement) return;
+    if (!shoppingCartElement) return; //ensure cart element exists
     shoppingCartElement.innerHTML = '';
 
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -127,6 +138,7 @@ function updateCheckoutCartElement(products = productList) {
         <span>Total: $sum€</span>
     </div>
     `
+    //converts the array of product IDs into an array of products with their count
     const cartProducts = cart.reduce((acc, productID, index, arr) => {
         if (index == arr.indexOf(productID)) {
             acc.push({
@@ -145,9 +157,9 @@ function updateCheckoutCartElement(products = productList) {
 }
 
 function updateShoppingCartElement(products = productList) {
-    if (!products) throw new Error('Cart update without product list');
+    if (!products) throw new Error('Cart update without product list'); //ensure product list is loaded
     const shoppingCartElement = document.querySelector('.shopping-cart');
-    if (!shoppingCartElement) return;
+    if (!shoppingCartElement) return; //ensure cart element exists
     shoppingCartElement.innerHTML = '';
 
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -166,6 +178,7 @@ function updateShoppingCartElement(products = productList) {
         </div>
     </div>
     `
+    //converts the array of product IDs into an array of products with their count
     const cartProducts = cart.reduce((acc, productID, index, arr) => {
         if (index == arr.indexOf(productID)) {
             acc.push({
@@ -183,6 +196,7 @@ function updateShoppingCartElement(products = productList) {
     });
 }
 
+//Adds an item to the cart
 function addToCart(ID) {
     //get cart items
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -196,6 +210,7 @@ function addToCart(ID) {
     document.dispatchEvent(cartChangedEvent);
 }
 
+//Removes an item from the cart
 function removeFromCart(ID) {
     //get cart items
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -208,6 +223,7 @@ function removeFromCart(ID) {
     document.dispatchEvent(cartChangedEvent);
 }
 
+//Removes all of an item from the cart
 function removeAllFromCart(ID) {
     //get cart items
     const cart = JSON.parse(localStorage.getItem('cart') || '[]')
@@ -219,34 +235,43 @@ function removeAllFromCart(ID) {
     document.dispatchEvent(cartChangedEvent);
 }
 
+//Completly empties the cart
 function emptyCart() {
     localStorage.setItem('cart', JSON.stringify([]));
 }
 
+//Set listeners to update cart counter, cart and cart total when the cart changes
 document.addEventListener('cart-changed', () => updateShoppingCartElement());
 document.addEventListener('cart-changed', () => updateCartCounter());
 document.addEventListener('cart-changed', () => updateCartTotal());
 
+//When dom finishes loading. Not necissary but doesnt cause harm either
 document.addEventListener('DOMContentLoaded', e => {
+    //load products
     loadProductList().then(products => {
-        productList = products
+        //when products are loaded
+        productList = products //memoize products
+
+        //Initialize elements
         if (document.querySelector('.product-list')) generateProductElements(products);
         if (document.querySelector('.featured-product-list')) generateFeaturedProductElements(products);
         if (document.querySelector('.shopping-cart')) updateShoppingCartElement(products);
         if (document.querySelector('.checkout-cart')) updateCheckoutCartElement(products);
         if (document.querySelector('.cart-total')) updateCartTotal(products);
+        updateCartCounter();
 
+        //fixes products not being scrolled into view as they are not loaded when the page first loads
         if (document.location.hash) {
             const target = document.querySelector(document.location.hash);
             target.scrollIntoView();
         }
-        updateCartCounter();
+
     });
 });
 
+//Toggle for the burger menu
 const burgerMenu = document.querySelector('.burger-menu');
 const hamburger = burgerMenu.querySelector('.hamburger');
-console.log(hamburger);
 hamburger.addEventListener('click', () => {
     if (burgerMenu.classList.contains('burger-menu-active')) {
         burgerMenu.classList.remove('burger-menu-active');
@@ -255,6 +280,7 @@ hamburger.addEventListener('click', () => {
     }
 });
 
+//Toggle for darkmode
 const darkmodeToggle = document.querySelector('.darkmode-toggle');
 darkmodeToggle.addEventListener('click', () => {
     if (document.body.classList.contains('darkmode')) {
