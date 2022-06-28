@@ -14,8 +14,6 @@ footer > div{
     height: var(--footer-height);
 }
 
-
-
 footer > div > a {
     display: flex;
     justify-content: center;

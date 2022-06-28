@@ -40,7 +40,6 @@
 
 #intro-products {
     grid-area: products;
-    margin-bottom: 3.5em;
 }
 
 #mando-intro-start{
@@ -52,8 +51,6 @@
     grid-template-columns: repeat(auto-fill, 240px);
     justify-content: center;
     gap: 0.8em;
-    padding: 3em 1em;
-    padding-bottom: 7em;
 }
 
 .featured-product-list>.featured-item {

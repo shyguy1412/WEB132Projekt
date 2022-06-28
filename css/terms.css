@@ -1,6 +1,7 @@
-
-.shipping {
-    margin: 1em;
+.shipping{
+    width: min(80%, 600px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #link-id{

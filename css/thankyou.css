@@ -1,13 +1,10 @@
 
 .mando-grogu{
-    width: 90%;
+    max-width: 100%;
 }
 
 #image-thankyou{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    align-items: center;
-    height: 100vh;
-    transform: translateY(-15%);
+    width: min(80%, 600px);
+    margin-left: auto;
+    margin-right: auto;
 }

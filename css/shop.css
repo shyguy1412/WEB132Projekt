@@ -7,10 +7,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
     justify-content: center;
-    grid-area: shop;
     gap: 0.8em;
-    padding: 3em 1em;
-    padding-bottom: 7em;
 }
 
 .shop-item {
