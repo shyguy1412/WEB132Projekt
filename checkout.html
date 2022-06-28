@@ -52,9 +52,13 @@
 
     <div class="checkout-grid grid-container">
 
-        <div class="grogu-card" id="checkout-cart">
+        <div class="grogu-card">
             <h1>Your Cart</h1>
-            <div class="shopping-cart"></div>
+            <div class="checkout-cart"></div>
+            <div id="checkout-total">
+                Grand Total: 
+                <span class="cart-total"></span>
+            </div>
         </div>
 
         <form action="/thankyou.html" onsubmit="emptyCart()" id="checkout-form" class="grogu-card">

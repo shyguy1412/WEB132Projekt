@@ -83,23 +83,48 @@ function updateCartCounter() {
 
 }
 
-function updateShoppingCartElement(products = productList) {
+function updateCartTotal(products = productList) {
     if (!products) throw new Error('Cart update without product list');
-    const shoppingCartElement = document.querySelector('.shopping-cart');
+    const cartTotalElement = document.querySelector('.cart-total');
+    if (!cartTotalElement) return;
+    cartTotalElement.innerHTML = '';
+
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    const cartProducts = cart.reduce((acc, productID, index, arr) => {
+        if (index == arr.indexOf(productID)) {
+            acc.push({
+                ...products.filter(product => product.ID == productID)[0],
+                count: cart.filter(value => value == productID).length
+            });
+        }
+        return acc;
+    }, []);
+
+    let sum = 0;
+
+    cartProducts.forEach(product => {
+        sum += product.price * product.count;
+    });
+
+    sum = sum.toFixed(2);
+    cartTotalElement.innerHTML = sum + '€';
+}
+
+function updateCheckoutCartElement(products = productList) {
+    if (!products) throw new Error('Cart update without product list');
+    const shoppingCartElement = document.querySelector('.checkout-cart');
     if (!shoppingCartElement) return;
     shoppingCartElement.innerHTML = '';
 
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     const templateHTML = /* html */`
-    <div id="$ID" class="cart-product">
-        <img class="product-img" src="$img_link" alt="$name">
+    <div id="$ID" class="checkout-item">
         <h3>$name</h3>
-        <span>$price</span>
-        <span>$count</span>
-        <button onclick="addToCart('$ID')">+</button>
-        <button onclick="removeFromCart('$ID')">-</button>
-        <button onclick="removeAllFromCart('$ID')">X</button>
+        <span>$price€</span>
+        <span>Amount: $count</span>
+        <span>Total: $sum€</span>
     </div>
     `
     const cartProducts = cart.reduce((acc, productID, index, arr) => {
@@ -113,6 +138,46 @@ function updateShoppingCartElement(products = productList) {
     }, []);
 
     cartProducts.forEach(product => {
+        product.sum = (product.price * product.count).toFixed(2);
+        const productHTML = evaluateTemplate(templateHTML, product);
+        shoppingCartElement.innerHTML += productHTML;
+    });
+}
+
+function updateShoppingCartElement(products = productList) {
+    if (!products) throw new Error('Cart update without product list');
+    const shoppingCartElement = document.querySelector('.shopping-cart');
+    if (!shoppingCartElement) return;
+    shoppingCartElement.innerHTML = '';
+
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    const templateHTML = /* html */`
+    <div id="$ID" class="cart-item grogu-card">
+        <img class="product-img" src="$img_link" alt="$name">
+        <h3>$name</h3>
+        <div>$price€</div>
+        <div>Amount: $count</div>
+        <div>Total: $sum€</div>
+        <div class="cart-buttons">
+            <button onclick="addToCart('$ID')"><i class="fa-solid fa-plus"></i></button>
+            <button onclick="removeFromCart('$ID')"><i class="fa-solid fa-minus"></i></button>
+            <button onclick="removeAllFromCart('$ID')"><i class="fa-solid fa-xmark"></i>    </button>
+        </div>
+    </div>
+    `
+    const cartProducts = cart.reduce((acc, productID, index, arr) => {
+        if (index == arr.indexOf(productID)) {
+            acc.push({
+                ...products.filter(product => product.ID == productID)[0],
+                count: cart.filter(value => value == productID).length
+            });
+        }
+        return acc;
+    }, []);
+
+    cartProducts.forEach(product => {
+        product.sum = (product.price * product.count).toFixed(2);
         const productHTML = evaluateTemplate(templateHTML, product);
         shoppingCartElement.innerHTML += productHTML;
     });
@@ -160,6 +225,7 @@ function emptyCart() {
 
 document.addEventListener('cart-changed', () => updateShoppingCartElement());
 document.addEventListener('cart-changed', () => updateCartCounter());
+document.addEventListener('cart-changed', () => updateCartTotal());
 
 document.addEventListener('DOMContentLoaded', e => {
     loadProductList().then(products => {
@@ -167,6 +233,8 @@ document.addEventListener('DOMContentLoaded', e => {
         if (document.querySelector('.product-list')) generateProductElements(products);
         if (document.querySelector('.featured-product-list')) generateFeaturedProductElements(products);
         if (document.querySelector('.shopping-cart')) updateShoppingCartElement(products);
+        if (document.querySelector('.checkout-cart')) updateCheckoutCartElement(products);
+        if (document.querySelector('.cart-total')) updateCartTotal(products);
 
         if (document.location.hash) {
             const target = document.querySelector(document.location.hash);

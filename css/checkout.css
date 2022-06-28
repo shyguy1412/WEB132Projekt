@@ -50,6 +50,9 @@
     text-shadow: -2.5px -2.5px 0 var(--color-border), 2.5px -2.5px 0 var(--color-border), -2.5px 2.5px 0 var(--color-border), 2.5px 2.5px 0 var(--color-border);
 }
 
+#checkout-total{
+    margin-top: 1em;;
+}
 
 .checkout-grid>* {
     font-size: 1em;

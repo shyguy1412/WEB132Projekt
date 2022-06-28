@@ -1,8 +1,21 @@
 #cart-list {
-    margin-bottom: 0.8em;
-    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
 }
 
 .cart-item {
     text-align: center;
+    max-width: 80%;
+}
+
+.cart-item button {
+    width: 1.8em;
+    height: 1.8em;
+    padding: 0.2em;
+}
+
+.cart-buttons{
+    margin-top: 0.8em;;
 }

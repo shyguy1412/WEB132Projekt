@@ -19,6 +19,6 @@
     border-radius: 0;
     border: 1px solid var(--color-border);
     font-size: 1.2em;
-    width: 75%;
+    width: 90%;
     columns: var(--color-foreground);
 }
