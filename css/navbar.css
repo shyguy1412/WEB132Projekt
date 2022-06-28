@@ -1,15 +1,18 @@
 nav {
     --nav-padding: 0.4em;
-    display: flex;
     position: fixed;
     top: 0;
     width: 100vw;
-    align-items: center;
-    background: var(--color-navbar-background);
-    padding: var(--nav-padding);
-    gap: 1.5em;
     z-index: 9999;
     grid-area: nav;
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    background: var(--color-navbar-background);
+    padding: var(--nav-padding);
 }
 
 .burger-menu {
