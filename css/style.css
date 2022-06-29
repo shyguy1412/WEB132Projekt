@@ -13,26 +13,44 @@
     --color-background: #ecdecd;
     --color-foreground: #343434;
     --color-primary: #abc4ab;
-    /* --color-border: #a39171; */
     --color-border: #abc4ab;
-    --color-button-hover: #857e73;
     --color-navbar-background: white;
+    --color-btn-foreground: #343434;
+    --color-btn-background: #abc4ab;
+    --color-input-background: #eee;
+    --color-input-focus: #ddd;
+    --color-logo: #343434;
+    --color-logo-shadow: #abc4ab;
+    --color-menu-background: #343434;
+    --color-menu-foreground: white;
+    --color-menu-shadow: #343434;
+    --color-burger: #343434;
+    --color-burger-active: #b31818;
+
 
     --navbar-offset: 75px;
     --footer-height: 3.5em;
     --footer-offset: calc(var(--footer-height) + 4em);
 
-    --color-btn-foreground: var(--color-foreground);
-    --color-btn-background: var(--color-primary);
 }
 
 .darkmode {
+    --color-background: #252424;
     --color-foreground: #ecdecd;
-    --color-background: #343434;
-    --color-primary: #abc4ab;
-    --color-border: #a39171;
-    --color-button-hover: #857e73;
+    --color-primary: #8fa58f;
+    --color-border: #8fa58f;
     --color-navbar-background: #343434;
+    --color-btn-foreground: #252424;
+    --color-btn-background: #8fa58f;
+    --color-input-background: #858484;
+    --color-input-focus: #7a7a7a;
+    --color-logo: #ecdecd;
+    --color-logo-shadow: #8fa58f;
+    --color-menu-background: #343434;
+    --color-menu-foreground: #ecdecd;
+    --color-menu-shadow: #343434;
+    --color-burger: #ecdecd;
+    --color-burger-active: #b31818;
 }
 
 /* Wofür brauchen wir das?
@@ -73,7 +91,7 @@ h2 {
 input,
 textarea,
 select {
-    background: #eee;
+    background: var(--color-input-background);
     border: 1px solid var(--color-border);
     width: 100%;
     padding: 12px 10px;
@@ -83,22 +101,23 @@ select {
 
 input:focus,
 textarea:focus {
-    background-color: lightgrey;
+    background-color: var(--color-input-focus);
     outline: none;
 }
 
 input[type="submit"],
 button {
-    background-color: var(--color-border);
+    background-color: var(--color-btn-background);
     border: none;
-    color: var(--color-foreground);
+    color: var(--color-btn-foreground);
     font-size: 1.1em;
+    transition: 0.15s;
 }
 
 input[type="submit"]:hover,
 button:hover {
-    background-color: var(--color-foreground);
-    color: var(--color-border);
+    background-color: var(--color-btn-foreground);
+    color: var(--color-btn-background);
 }
 
 textarea {
@@ -127,13 +146,14 @@ a.grogu-card:hover,
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
-    text-shadow: 2px 2px var(--color-primary);
-    color: var(--color-foreground);
+    text-shadow: 2px 2px var(--color-logo-shadow);
+    color: var(--color-logo);
     font-style: italic;
 }
 
 a.grogu-text:hover {
-    text-shadow: 2px 2px var(--color-foreground);
+    text-shadow: 2px 2px var(--color-logo);
+    color: var(--color-logo-shadow);
 }
 
 .grid-container {

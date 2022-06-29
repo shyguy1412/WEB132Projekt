@@ -16,8 +16,6 @@ nav > div {
 }
 
 .burger-menu {
-    --nav-color-background: var(--color-background);
-    --nav-color-foreground: var(--color-foreground);
     position: relative;
     display: inline-block;
     right: 0px;
@@ -43,7 +41,7 @@ nav > div {
     border-radius: 3px;
     transition: 0.5s;
     transform-origin: 0% 0%;
-    background: var(--nav-color-foreground);
+    background: var(--color-burger);
 }
 
 .burger-menu>.hamburger>span:first-child {
@@ -51,7 +49,7 @@ nav > div {
 }
 
 .burger-menu.burger-menu-active>.hamburger>span {
-    background: var(--nav-color-background);
+    background: var(--color-burger-active);
 }
 
 .burger-menu.burger-menu-active>.hamburger>span:first-child {
@@ -70,17 +68,19 @@ nav > div {
 
 
 .burger-menu>ul {
-    background: var(--nav-color-foreground);
+    background: var(--color-menu-background);
     display: inline-block;
     position: absolute;
     top: 0;
     width: min(15em, 100vw);
     height: 100vh;
     margin: 0;
-    padding-top: 3.5em;
-    padding-left: 1em;
+    padding-top: 4.5em;
+    padding-left: 2em;
     transform: translate(calc(-100% - var(--nav-padding)), calc(var(--nav-padding) * -1));
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    opacity: 0.9;
+    box-shadow: 0 0 15px var(--color-menu-shadow);
 }
 
 .burger-menu.burger-menu-active>ul {
@@ -97,7 +97,7 @@ nav > div {
     text-decoration: none;
     transition: 0.1s;
     font-size: 1.5em;
-    color: var(--nav-color-background);
+    color: var(--color-menu-foreground);
 }
 
 .burger-menu>ul>li>a:hover {
@@ -113,7 +113,7 @@ nav > div {
 
 .cart-button,
 .cart-button * {
-    transition: 0.3s;
+    transition: 0.15s;
 }
 
 .cart-button:hover {

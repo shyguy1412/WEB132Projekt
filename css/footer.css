@@ -20,8 +20,8 @@ footer {
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-    background-color: var(--color-primary);
-    color: var(--color-foreground);
+    background-color: var(--color-btn-background);
+    color: var(--color-btn-foreground);
     width: 1em;
     height: 1em;
     padding: 0.5em;
@@ -32,6 +32,6 @@ footer {
 
 
 .socials>a:hover {
-    background-color: var(--color-foreground);
-    color: var(--color-primary);
+    background-color: var(--color-btn-foreground);
+    color: var(--color-btn-background);
 }
