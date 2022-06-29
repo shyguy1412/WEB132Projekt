@@ -42,6 +42,10 @@
     grid-area: products;
 }
 
+#intro-socials{
+    font-size: 1em;
+}
+
 #mando-intro-start{
     margin-top: 2.2em;
 }
