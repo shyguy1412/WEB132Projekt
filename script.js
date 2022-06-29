@@ -70,6 +70,7 @@ function generateFeaturedProductElements(products) {
     `;
 
     products.forEach(product => {
+        if(!product.featured)return;
         const productHTML = evaluateTemplate(templateHTML, product); //crate product HTML
         document.querySelector('.featured-product-list').innerHTML += productHTML;  //append product to list
     })
