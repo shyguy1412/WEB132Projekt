@@ -64,7 +64,7 @@ function generateFeaturedProductElements(products) {
             <p>$description</p>
         </div>
         <div class="product-price">
-           <p>$price</p>
+           <p>$price€</p>
         </div>
     </a>
     `;
