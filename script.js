@@ -35,7 +35,7 @@ function generateProductElements(products) {
     const templateHTML = /* html */`
     <div class="shop-item grogu-card grogu-card-clickable" id="$ID">
         <h3>$name</h3>
-        <img class="product-img" src="$img_link" alt="$name">
+        <img class="product-img" src="$img_link" alt="$img_alt">
         <div class="product-info">
             <p>$description</p>
         </div>
@@ -59,7 +59,7 @@ function generateFeaturedProductElements(products) {
     const templateHTML = /* html */`
     <a href="shop#$ID" class="featured-item grogu-card grogu-card-clickable" id="$ID">
         <h3>$name</h3>
-        <img class="product-img" src="$img_link" alt="$name">
+        <img class="product-img" src="$img_link" alt="$img_alt">
         <div class="product-info">
             <p>$description</p>
         </div>
@@ -166,7 +166,7 @@ function updateShoppingCartElement(products = productList) {
 
     const templateHTML = /* html */`
     <div id="$ID" class="cart-item grogu-card">
-        <img class="product-img" src="$img_link" alt="$name">
+        <img class="product-img" src="$img_link" alt="$img_alt">
         <h3>$name</h3>
         <div>$price€</div>
         <div>Amount: $count</div>
