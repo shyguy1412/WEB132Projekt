@@ -8,11 +8,16 @@
     grid-template-columns: repeat(auto-fill, 240px);
     justify-content: center;
     gap: 0.8em;
+    padding-inline: 2em;
 }
 
 .shop-item {
     text-align: center;
     scroll-margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .shop-item>button {
@@ -21,4 +26,14 @@
     font-size: 1.2em;
     width: 90%;
     columns: var(--color-foreground);
+}
+
+@media(min-width: 1655px) {
+    #shop-product-list {
+        grid-template-columns: 300px 300px 300px 300px 300px;
+    }
+
+    .shop-item {
+        height: 380px;
+    }
 }

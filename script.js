@@ -40,7 +40,7 @@ function generateProductElements(products) {
             <p>$description</p>
         </div>
         <div class="product-price">
-            <p>$price</p>
+            <p>$price€</p>
         </div>
         <button onclick="addToCart('$ID')">Buy!</Button>
     </div>
@@ -57,7 +57,7 @@ function generateProductElements(products) {
 function generateFeaturedProductElements(products) {
     //HTML Template
     const templateHTML = /* html */`
-    <a href="shop#$ID" class="featured-item grogu-card grogu-card-clickable" id="$ID">
+    <a href="shop.html#$ID" class="featured-item grogu-card grogu-card-clickable" id="$ID">
         <h3>$name</h3>
         <img class="product-img" src="$img_link" alt="$img_alt">
         <div class="product-info">
@@ -239,6 +239,9 @@ function removeAllFromCart(ID) {
 //Completly empties the cart
 function emptyCart() {
     localStorage.setItem('cart', JSON.stringify([]));
+
+    const cartChangedEvent = new Event('cart-changed');
+    document.dispatchEvent(cartChangedEvent);
 }
 
 //Set listeners to update cart counter, cart and cart total when the cart changes

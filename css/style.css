@@ -1,3 +1,4 @@
+@import url(reset.css);
 @import url(navbar.css);
 @import url(footer.css);
 @import url(checkout.css);
@@ -25,7 +26,7 @@
     --color-menu-foreground: white;
     --color-menu-shadow: #343434;
     --color-burger: #343434;
-    --color-burger-active: #b31818;
+    --color-burger-active: #ecdecd;
 
 
     --navbar-offset: 75px;
@@ -50,7 +51,11 @@
     --color-menu-foreground: #ecdecd;
     --color-menu-shadow: #343434;
     --color-burger: #ecdecd;
-    --color-burger-active: #b31818;
+    --color-burger-active: white;
+}
+
+*, ::before, ::after{
+    box-sizing: content-box;
 }
 
 /* Wofür brauchen wir das?
@@ -85,7 +90,8 @@ a:hover {
 h1,
 h2 {
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    font-size: 1.3em;
+    font-size: 1.5em;
+    margin-block: 1em;
 }
 
 input,
@@ -112,6 +118,7 @@ button {
     color: var(--color-btn-foreground);
     font-size: 1.1em;
     transition: 0.15s;
+    text-align: center;
 }
 
 input[type="submit"]:hover,
@@ -165,4 +172,15 @@ a.grogu-text:hover {
     width: 85%;
     max-width: 200px;
     aspect-ratio: 1/1;
+}
+
+@media (min-width: 1000px){
+    .grid-container {
+        margin-left: 5em;
+        margin-right: 5em;
+    } 
+
+    body{
+        font-size: 1.3em;
+    }
 }

@@ -5,6 +5,7 @@
 .groguhead {
     position: absolute;
     width: 320px;
+    height: 70px;
     transform: translate(-50%, -110%);
     z-index: -1;
 }
@@ -15,8 +16,7 @@
     grid-template-areas:
         'about'
         'trailer'
-        'products'
-        'footer';
+        'products';
     gap: 1em;
     min-height: calc(100vh - var(--navbar-offset));
 }
@@ -36,17 +36,18 @@
 
 .trailer-m {
     grid-area: trailer;
+    height: fit-content;
 }
 
 #intro-products {
     grid-area: products;
 }
 
-#intro-socials{
+#intro-socials {
     font-size: 1em;
 }
 
-#mando-intro-start{
+#mando-intro-start {
     margin-top: 2.2em;
 }
 
@@ -65,8 +66,39 @@
     margin-bottom: 0.5em;
 }
 
-.video-trailer{
+.video-trailer {
     display: flex;
     justify-content: center;
+}
+
+.video-trailer iframe {
     width: 100%;
+    aspect-ratio: 16/9;
+}
+
+@media (min-width:1000px) {
+    .featured-product-list {
+        grid-template-columns: 240px 240px 240px;
+    }
+
+    #intro-socials {
+        font-size: 1.5em;
+    }
+    
+}
+
+@media (min-width:1550px) {
+    #intro-grid {
+        grid-template-areas:
+            'about products'
+            'trailer trailer';
+    }
+
+    #intro-about{
+        padding-inline: 2em;
+    }
+
+    #intro-products{
+        margin-top: 72px;
+    }
 }
