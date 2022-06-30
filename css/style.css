@@ -36,22 +36,22 @@
 }
 
 .darkmode {
-    --color-background: #252424;
-    --color-foreground: #ecdecd;
-    --color-primary: #8fa58f;
-    --color-border: #8fa58f;
-    --color-navbar-background: #343434;
-    --color-btn-foreground: #252424;
-    --color-btn-background: #8fa58f;
-    --color-input-background: #858484;
-    --color-input-focus: #7a7a7a;
-    --color-logo: #ecdecd;
-    --color-logo-shadow: #8fa58f;
+    --color-background: #272326;
+    --color-foreground: #dad6d5;
+    --color-primary: #272326;
+    --color-border: #dad6d5;
+    --color-navbar-background: #3c3e52;
+    --color-btn-foreground: #272326;
+    --color-btn-background: #dad6d5;
+    --color-input-background: #272326;
+    --color-input-focus: #605e5f;
+    --color-logo: #dad6d5;
+    --color-logo-shadow: #838082;
     --color-menu-background: #343434;
-    --color-menu-foreground: #ecdecd;
+    --color-menu-foreground: #dad6d5;
     --color-menu-shadow: #343434;
-    --color-burger: #ecdecd;
-    --color-burger-active: white;
+    --color-burger: #dad6d5;
+    --color-burger-active: #dad6d5;
 }
 
 *, ::before, ::after{
