@@ -71,7 +71,7 @@
         grid-template-areas:
             'form cart';
         margin-inline: 15em;
-        gap: 5em;
+        gap: 2em;
     }
 
 }
