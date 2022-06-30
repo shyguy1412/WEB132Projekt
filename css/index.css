@@ -60,6 +60,12 @@
 
 .featured-product-list>.featured-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.3em;
+    height: 400px;
 }
 
 .featured-product-list>.item>h3 {
@@ -99,6 +105,7 @@
     }
 
     #intro-products{
-        margin-top: 72px;
+        margin-top: 4.5em;
+        height: fit-content;
     }
 }

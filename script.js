@@ -132,10 +132,10 @@ function updateCheckoutCartElement(products = productList) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     const templateHTML = /* html */`
-    <div id="$ID" class="checkout-item">
+    <div id="$ID" class="cart-item">
         <h3>$name</h3>
         <span>$price€</span>
-        <span>Amount: $count</span>
+        <span>x $count</span>
         <span>Total: $sum€</span>
     </div>
     `
@@ -166,17 +166,20 @@ function updateShoppingCartElement(products = productList) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     const templateHTML = /* html */`
-    <div id="$ID" class="cart-item grogu-card">
+    <div id="$ID" class="cart-item">
         <img class="product-img" src="$img_link" alt="$img_alt">
-        <h3>$name</h3>
-        <div>$price€</div>
-        <div>Amount: $count</div>
-        <div>Total: $sum€</div>
-        <div class="cart-buttons">
+        <span>
+            <h3>$name
+            </h3>
+            <div>$price€</div>
+            <div>x $count</div>
+            <div class="add-remove-btn-wrapper">
             <button onclick="addToCart('$ID')"><i class="fa-solid fa-plus"></i></button>
             <button onclick="removeFromCart('$ID')"><i class="fa-solid fa-minus"></i></button>
-            <button onclick="removeAllFromCart('$ID')"><i class="fa-solid fa-xmark"></i>    </button>
-        </div>
+            <button onclick="removeAllFromCart('$ID')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div>Total: $sum€</div>
+        </span>
     </div>
     `
     //converts the array of product IDs into an array of products with their count
@@ -258,6 +261,7 @@ function emptyCart() {
 
 //Set listeners to update cart counter, cart and cart total when the cart changes
 document.addEventListener('cart-changed', () => updateShoppingCartElement());
+document.addEventListener('cart-changed', () => updateCheckoutCartElement());
 document.addEventListener('cart-changed', () => updateCartCounter());
 document.addEventListener('cart-changed', () => updateCartTotal());
 

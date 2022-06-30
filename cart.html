@@ -16,7 +16,7 @@
     <meta property="og:type" content="webshop">
     <meta property="og:locale" content="de_DE">
     <meta property="og:image" content="img/open-graph/open-graph.png">
-    
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon/favicon-96x96.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -62,13 +62,18 @@
         </div>
     </nav>
 
-    <div id="cart-grid">
-        <div id="cart-list" class="shopping-cart"></div>
-
-
-        <!-- <div class="grogu-card">
-            <a href="checkout.html">Checkout</a>
-        </div> -->
+    <div class="grid-container">
+        <div id="cart-grid">
+            <div id="cart-container" class="grogu-card">
+                <h1>Your Cart</h1>
+                <div class="shopping-cart"></div>
+                <div>
+                    Grand Total:
+                    <span class="cart-total"></span>
+                </div>
+                <a id="checkout-button" href="checkout.html"><button>Checkout</button></a>
+            </div>
+        </div>
     </div>
 
     <footer>
