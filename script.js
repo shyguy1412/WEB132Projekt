@@ -42,7 +42,7 @@ function generateProductElements(products) {
         <div class="product-price">
             <p>$price€</p>
         </div>
-        <button onclick="addToCart('$ID')">Buy!</Button>
+        <button id="btn_$ID" onclick="addToCart('$ID')"><span>Buy!</span><i class="fa-solid fa-check"></i></Button>
     </div>
     `;
 
@@ -199,11 +199,23 @@ function updateShoppingCartElement(products = productList) {
 
 //Adds an item to the cart
 function addToCart(ID) {
+    //try to trigger animation
+    const btn = document.getElementById('btn_' + ID);
+    console.log(btn, 'btn_' + ID);
+    if(btn){
+        btn.firstChild.style.animation = '';
+        btn.lastChild.style.animation = '';
+
+        setTimeout(() => {
+            btn.firstChild.style.animation = 'fade-in-out 2s ease-in-out';
+            btn.lastChild.style.animation = 'show-checkmark 2s ease-in-out';
+        }, 0)
+    }
+
     //get cart items
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     //add new item
     cart.push(ID);
-    console.log(ID, cart);
     //save cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
