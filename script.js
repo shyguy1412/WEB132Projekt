@@ -70,7 +70,7 @@ function generateFeaturedProductElements(products) {
     `;
 
     products.forEach(product => {
-        if(!product.featured)return;
+        if (!product.featured) return;
         const productHTML = evaluateTemplate(templateHTML, product); //crate product HTML
         document.querySelector('.featured-product-list').innerHTML += productHTML;  //append product to list
     })
@@ -94,7 +94,7 @@ function updateCartCounter() {
 //Updates the combined total of all products in the cart
 function updateCartTotal(products = productList) {
     if (!products) throw new Error('Cart update without product list'); //ensure product list is loaded
-    const cartTotalElement = document.querySelector('.cart-total'); 
+    const cartTotalElement = document.querySelector('.cart-total');
     if (!cartTotalElement) return; //ensure cart element exists
     cartTotalElement.innerHTML = ''; //clear html
 
@@ -202,7 +202,7 @@ function addToCart(ID) {
     //try to trigger animation
     const btn = document.getElementById('btn_' + ID);
     console.log(btn, 'btn_' + ID);
-    if(btn){
+    if (btn) {
         btn.firstChild.style.animation = '';
         btn.lastChild.style.animation = '';
 
@@ -301,7 +301,26 @@ const darkmodeToggle = document.querySelector('.darkmode-toggle');
 darkmodeToggle.addEventListener('click', () => {
     if (document.body.classList.contains('darkmode')) {
         document.body.classList.remove('darkmode');
+        localStorage.setItem('theme', 'light');
     } else {
         document.body.classList.add('darkmode');
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+//detect system theme
+const themeMediaMatch = window.matchMedia("(prefers-color-scheme: dark)");
+
+//set darkmode if system prefers it and no other specified
+if (themeMediaMatch.matches && (!localStorage.getItem('theme') || localStorage.getItem('theme') == 'dark')) {
+    document.body.classList.add('darkmode');
+}
+
+//set theme to prefered when system settings change
+themeMediaMatch.addEventListener("change", function (e) {
+    if (themeMediaMatch.matches && !localStorage.getItem('theme')) {
+        document.body.classList.add('darkmode');
+    } else {
+        document.body.classList.remove('darkmode');
     }
 });
