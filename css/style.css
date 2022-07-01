@@ -54,7 +54,9 @@
     --color-burger-active: #dad6d5;
 }
 
-*, ::before, ::after{
+*,
+::before,
+::after {
     box-sizing: content-box;
 }
 
@@ -88,10 +90,16 @@ a:hover {
 }
 
 h1,
-h2 {
+h2{
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     font-size: 1.5em;
     margin-block: 1em;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 input,
@@ -174,13 +182,13 @@ a.grogu-text:hover {
     aspect-ratio: 1/1;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1000px) {
     .grid-container {
         margin-left: 5em;
         margin-right: 5em;
-    } 
+    }
 
-    body{
+    body {
         font-size: 1.3em;
     }
 }

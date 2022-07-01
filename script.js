@@ -132,7 +132,7 @@ function updateCheckoutCartElement(products = productList) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     const templateHTML = /* html */`
-    <div id="$ID" class="cart-item">
+    <div id="$ID" class="checkout-item">
         <h3>$name</h3>
         <span>$price€</span>
         <span>x $count</span>
@@ -171,8 +171,7 @@ function updateShoppingCartElement(products = productList) {
         <span>
             <h3>$name
             </h3>
-            <div>$price€</div>
-            <div>x $count</div>
+            <div>$price€ x $count</div>
             <div class="add-remove-btn-wrapper">
             <button onclick="addToCart('$ID')"><i class="fa-solid fa-plus"></i></button>
             <button onclick="removeFromCart('$ID')"><i class="fa-solid fa-minus"></i></button>
@@ -322,7 +321,7 @@ if (themeMediaMatch.matches && (!localStorage.getItem('theme') || localStorage.g
 
 //set theme to prefered when system settings change
 themeMediaMatch.addEventListener("change", function (e) {
-    if (themeMediaMatch.matches && !localStorage.getItem('theme')) {
+    if (themeMediaMatch.matches && (!localStorage.getItem('theme') || localStorage.getItem('theme') == 'dark')) {
         document.body.classList.add('darkmode');
     } else {
         document.body.classList.remove('darkmode');

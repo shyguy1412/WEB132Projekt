@@ -48,29 +48,41 @@
 }
 
 #checkout-payment-options>input:checked+label>i {
-    background: var(--color-border);
+    background: var(--color-primary);
 }
 
 #checkout-payment-options>input:checked+label {
     /* border: 1px solid var(--color-border); */
-    text-shadow: -2.5px -2.5px 0 var(--color-border), 2.5px -2.5px 0 var(--color-border), -2.5px 2.5px 0 var(--color-border), 2.5px 2.5px 0 var(--color-border);
+    text-shadow: -2.5px -2.5px 0 var(--color-primary), 2.5px -2.5px 0 var(--color-primary), -2.5px 2.5px 0 var(--color-primary), 2.5px 2.5px 0 var(--color-primary);
 }
 
 #checkout-total {
     margin-top: 1em;
-    ;
+    font-weight: bold;
+    text-align: right;
 }
 
 .checkout-grid>* {
     font-size: 1em;
 }
 
+.checkout-item {
+    margin-bottom: 15px;
+    gap: 1em;
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 15px;
+}
+
+.checkout-item > :last-child {
+    position: absolute;
+    right: 0;
+  }
 
 @media(min-width:1000px) {
     .checkout-grid.grid-container {
         grid-template-areas:
             'form cart';
-        margin-inline: 15em;
         gap: 2em;
     }
 

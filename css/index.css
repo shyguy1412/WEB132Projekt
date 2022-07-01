@@ -59,13 +59,14 @@
 }
 
 .featured-product-list>.featured-item {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-rows: 10% 50% 25% 12%;
+    justify-items: center;
     align-items: center;
     gap: 0.3em;
     height: 400px;
+    justify-content: center;
+    text-align: center;
 }
 
 .featured-product-list>.item>h3 {

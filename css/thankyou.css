@@ -1,9 +1,11 @@
-
-.mando-grogu{
+.mando-grogu {
     max-width: 100%;
+    padding-top: 3em;
+    filter:
+        drop-shadow(-1px 1px 5px var(--color-border)) drop-shadow(1px -1px 5px var(--color-border)) drop-shadow(1px 1px 5px var(--color-border)) drop-shadow(-1px -1px 5px var(--color-border));
 }
 
-#image-thankyou{
+#image-thankyou {
     width: min(80%, 600px);
     margin-left: auto;
     margin-right: auto;
