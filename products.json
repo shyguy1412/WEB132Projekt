@@ -5,7 +5,7 @@
         "description": "A cute mug that looks like Grogu's face!",
         "price": 8.99,
         "img_link": "img/merch/grogu-becher.jpg",
-        "img_alt": "",
+        "img_alt": "Image of a steaming mug with Grogu's face, big eyes and ears ",
         "featured": true
     },
     {
@@ -14,7 +14,7 @@
         "description": "Start your day happier with a Grogu-faced toast in the morning!",
         "price": 49.99,
         "img_link": "img/merch/grogu-toaster.jpg",
-        "img_alt": "",
+        "img_alt": "Image of a green Grogu toaster with toast bread sticking out on top with Grogu's face ",
         "featured": false
     },
     {
@@ -23,7 +23,7 @@
         "description": "Green T-Shirt with Grogu print",
         "price": 19.99,
         "img_link": "img/merch/grogu-tshirt-green.jpg",
-        "img_alt": "",
+        "img_alt": "Imag of a green t-shirt with Grogu's face in the middle, grogu in the background and text saying 'the child' ",
         "featured": false
     },
     {
@@ -32,7 +32,7 @@
         "description": "Perfect to keep your feet warm",
         "price": 6.99,
         "img_link": "img/merch/grogu-socks.jpg",
-        "img_alt": "",
+        "img_alt": "Image of cute Grogu green socks with big eyes and ears sticking on both sides out ",
         "featured": true
     },
     {
@@ -40,8 +40,8 @@
         "name": "Grogu Keychain",
         "description": "With the power of the force you wont ever loose your key again",
         "price": 3.99,
-        "img_link": "img/merch/keychain-grogu.webp",
-        "img_alt": "",
+        "img_link": "img/merch/keychain-grogu.jpg",
+        "img_alt": "Image of Star Wars, the Child small keychain that comes in a box",
         "featured": true
     },
     {
@@ -50,7 +50,7 @@
         "description": "Coffe mug in Mando's helmet design",
         "price": 8.99,
         "img_link": "img/merch/mando-becher.jpg",
-        "img_alt": "",
+        "img_alt": "Image of grey mug that has Mandalorians mask details and steam coming out",
         "featured": true
     },
     {
@@ -59,7 +59,7 @@
         "description": "Black T-Shirt with Mando print",
         "price": 19.99,
         "img_link": "img/merch/mando-head-tshirt.jpg",
-        "img_alt": "",
+        "img_alt": "Image of a black Mandalorian t-shirt that says 'this is the way'",
         "featured": false
     },
     {
@@ -68,7 +68,7 @@
         "description": "Build your own Mando Helm!",
         "price": 49.99,
         "img_link": "img/merch/mando-helm-lego.jpg",
-        "img_alt": "",
+        "img_alt": "Image of a big Mandalorian disney lego head with helmet that comes with 584 pieces ",
         "featured": true
     },
     {
@@ -77,7 +77,7 @@
         "description": "Big Poster with Mandos face",
         "price": 3.99,
         "img_link": "img/merch/mando-poster.jpg",
-        "img_alt": "",
+        "img_alt": "Image of a big 91x61 cm poster with Mandalorians head on it and text 'the Mandalorian' ",
         "featured": false
     },
     {
@@ -86,7 +86,7 @@
         "description": "Black T-Shirt with Mando and Grogu print",
         "price": 19.99,
         "img_link": "img/merch/mando-with-child-tshirt.jpg",
-        "img_alt": "",
+        "img_alt": "Image of Star Wars x Mandalorian, Mando holding Grogu while Grogu is trying to reach for Mando's face",
         "featured": true
     }
 ]
