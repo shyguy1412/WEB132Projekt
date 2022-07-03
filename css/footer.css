@@ -15,11 +15,10 @@ footer {
 }
 
 .socials>a {
+    /*Center icons*/
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
-    flex-grow: 0;
     background-color: var(--color-btn-background);
     color: var(--color-btn-foreground);
     width: 1em;
@@ -28,8 +27,6 @@ footer {
     border-radius: 100%;
     transition: 0.15s;
 }
-
-
 
 .socials>a:hover {
     background-color: var(--color-btn-foreground);

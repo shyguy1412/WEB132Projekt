@@ -1,3 +1,4 @@
+/* position navbar at the top */
 nav {
     --nav-padding: 0.4em;
     position: fixed;
@@ -7,7 +8,8 @@ nav {
     grid-area: nav;
 }
 
-nav > div {
+/* layout navbar items */
+nav>div {
     display: flex;
     align-items: center;
     gap: 1.5em;
@@ -32,6 +34,7 @@ nav > div {
     transition: 0.5s;
 }
 
+/* Design for the burger icon */
 .burger-menu>.hamburger>span {
     position: relative;
     display: block;
@@ -44,6 +47,7 @@ nav > div {
     background: var(--color-burger);
 }
 
+/*Offset first child so the burger is centered within its content box*/
 .burger-menu>.hamburger>span:first-child {
     margin-top: 5px;
 }
@@ -51,6 +55,8 @@ nav > div {
 .burger-menu.burger-menu-active>.hamburger>span {
     background: var(--color-burger-active);
 }
+
+/* Transform burger to X when menu is active */
 
 .burger-menu.burger-menu-active>.hamburger>span:first-child {
     transform: translate(0px, -5px) rotate(45deg);
@@ -77,12 +83,14 @@ nav > div {
     margin: 0;
     padding-top: 4.5em;
     padding-left: 2em;
+    /* slide menu out of the viewport */
     transform: translate(calc(-100% - var(--nav-padding)), calc(var(--nav-padding) * -1));
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     opacity: 0.9;
 }
 
 .burger-menu.burger-menu-active>ul {
+    /* Show menu when active */
     transform: translate(calc(var(--nav-padding) * -1), calc(var(--nav-padding) * -1));
     box-shadow: 0 0 15px var(--color-menu-shadow);
 }
@@ -128,7 +136,8 @@ nav > div {
     color: var(--color-primary);
 }
 
-.fa-solid.fa-bag-shopping > .cart-counter {
+/* position and design the cart counter over the shopping bad */
+.fa-solid.fa-bag-shopping>.cart-counter {
     content: var(--cart-count);
     display: flex;
     position: absolute;

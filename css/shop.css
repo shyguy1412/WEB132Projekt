@@ -31,7 +31,7 @@
     user-select: none;
 }
 
-.product-info>p{
+.product-info>p {
     font-size: 1em;
 }
 
@@ -51,6 +51,8 @@
     clip-path: inset(0% 100% 0% 0%);
     /* animation: show-checkmark 2s ease-in-out; */
 }
+
+/* Checkmark animation when item is added to cart */
 
 @keyframes fade-in-out {
 
@@ -84,11 +86,11 @@
     }
 }
 
-@media(min-width: 1000px){
-    .product-info>p{
+@media(min-width: 1000px) {
+    .product-info>p {
         font-size: 0.8em;
     }
-    
+
 }
 
 @media(min-width: 1655px) {

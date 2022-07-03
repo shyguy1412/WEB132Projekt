@@ -1,6 +1,7 @@
 .mando-grogu {
     max-width: 100%;
     padding-top: 3em;
+    /* Give image a glow. This is so the text is still readable in dark mode */
     filter:
         drop-shadow(-1px 1px 5px var(--color-border)) drop-shadow(1px -1px 5px var(--color-border)) drop-shadow(1px 1px 5px var(--color-border)) drop-shadow(-1px -1px 5px var(--color-border));
 }

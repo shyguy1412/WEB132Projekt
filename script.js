@@ -203,11 +203,12 @@ function updateShoppingCartElement(products = productList) {
 function addToCart(ID) {
     //try to trigger animation
     const btn = document.getElementById('btn_' + ID);
-    console.log(btn, 'btn_' + ID);
     if (btn) {
+        //remove animation
         btn.firstChild.style.animation = '';
         btn.lastChild.style.animation = '';
 
+        //set timeout of 0 ms. this is so the animation removal actually takes affect
         setTimeout(() => {
             btn.firstChild.style.animation = 'fade-in-out 2s ease-in-out';
             btn.lastChild.style.animation = 'show-checkmark 2s ease-in-out';

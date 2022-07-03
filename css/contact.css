@@ -1,19 +1,20 @@
-#contact-form{
+/* center form, limit width between 80% and 600px */
+#contact-form {
     width: min(80%, 600px);
     margin-left: auto;
     margin-right: auto;
 }
 
-#contact-form > input,
-#contact-form > select,
-#contact-form > textarea{
+#contact-form>input,
+#contact-form>select,
+#contact-form>textarea {
     margin-bottom: 0.8em;
 }
 
-#contact-form > h2 {
+#contact-form>h2 {
     margin: 0;
 }
 
-option:hover{
+option:hover {
     color: lightgrey;
 }

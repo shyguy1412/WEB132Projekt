@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+/* Position grogu head over intro section */
 .groguhead {
     position: absolute;
     width: 320px;
@@ -23,6 +24,7 @@
 
 #intro-about {
     grid-area: about;
+    /* margin to make space for grogu head */
     margin-top: 4.5em;
     text-align: center;
     line-height: 1.2em;
@@ -80,6 +82,7 @@
 
 .video-trailer iframe {
     width: 100%;
+    /*Keep video in a 16:9 aspect ratio*/
     aspect-ratio: 16/9;
 }
 
@@ -91,7 +94,7 @@
     #intro-socials {
         font-size: 1.5em;
     }
-    
+
 }
 
 @media (min-width:1550px) {
@@ -101,11 +104,12 @@
             'trailer trailer';
     }
 
-    #intro-about{
+    #intro-about {
         padding-inline: 2em;
     }
 
-    #intro-products{
+    #intro-products {
+        /*Align margin top with intro section (because of grogu head)*/
         margin-top: 4.5em;
         height: fit-content;
     }

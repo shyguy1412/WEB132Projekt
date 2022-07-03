@@ -21,10 +21,8 @@
 }
 
 .cart-item>img {
-    width: 30%;
-    max-width: 100px;
-    height: 30%;
-    max-height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .cart-item button {
@@ -61,6 +59,7 @@
     text-align: right;
 }
 
+/*Show link in same style as a button*/
 #checkout-button {
     display: block;
     text-align: center;
